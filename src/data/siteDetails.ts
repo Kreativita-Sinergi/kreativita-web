@@ -12,7 +12,7 @@ export const siteDetails = {
   contact: {
     whatsapp: "6283878960539", // format internasional tanpa "+" untuk wa.me
     phoneDisplay: "+62 838-7896-0539",
-    email: "halo@kreativita.id", // TODO: ganti dengan email asli
+    email: "halo@kreativitasinergi.com",
     location: "Indonesia",
   },
 };
