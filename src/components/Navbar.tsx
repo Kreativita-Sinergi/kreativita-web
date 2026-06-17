@@ -11,7 +11,7 @@ export default function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50">
       <div className="bg-white/80 backdrop-blur-md border-b border-slate-100">
         <nav className="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-2.5 text-lg sm:text-xl tracking-tight">
+          <a href="/" className="flex items-center gap-2.5 text-lg sm:text-xl tracking-tight">
             <Image src="/logo-icon.png" alt="Kreativita Sinergi" width={36} height={36} className="w-9 h-9" priority />
             <span className="leading-none">
               <span className="font-extrabold text-slate-900">KREATIVITA</span>{" "}
@@ -30,7 +30,7 @@ export default function Navbar() {
           </ul>
 
           <a
-            href="#kontak"
+            href="/#kontak"
             className="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 transition"
           >
             Konsultasi Gratis
