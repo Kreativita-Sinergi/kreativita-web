@@ -6,6 +6,8 @@ export type Block =
   | { type: "h2"; text: string }
   | { type: "ul"; items: string[] };
 
+export type Source = { label: string; url: string };
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -16,6 +18,9 @@ export type BlogPost = {
   readingTime: string; // contoh "6 menit"
   keywords: string[];
   content: Block[];
+  // Sumber/referensi yang dikutip dalam artikel (opsional).
+  // Teks paragraf & list mendukung tautan inline format: [label](https://url)
+  sources?: Source[];
 };
 
 // Penutup standar dengan soft-CTA ke Kreativita Sinergi
@@ -41,36 +46,76 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Di era digital, website bukan lagi kemewahan — ia adalah etalase utama bisnis Anda yang buka 24 jam. Namun banyak pelaku UMKM ragu memulai karena bingung soal jenis website, biaya, dan cara memilih vendor yang tepat. Artikel ini merangkum semua yang perlu Anda ketahui sebelum memesan jasa pembuatan website.",
+        text: "Sebelum memutuskan membeli, kebanyakan orang Indonesia kini mencari dulu di internet. Menurut laporan [Digital 2025 Indonesia dari DataReportal](https://datareportal.com/reports/digital-2025-indonesia), ada sekitar **212 juta pengguna internet** di Indonesia pada awal 2025 — setara penetrasi 74,6% dari total populasi. Artinya, kalau bisnis Anda tidak hadir secara online, Anda praktis tidak terlihat oleh tiga dari empat calon pelanggan. Di sinilah website berperan: bukan lagi kemewahan, melainkan etalase utama yang buka 24 jam.",
       },
-      { type: "h2", text: "Kenapa UMKM Butuh Website?" },
       {
         type: "p",
-        text: "Media sosial memang penting, tapi Anda tidak memiliki kendali penuh atasnya. Website adalah aset digital milik Anda sendiri — tampil profesional, mudah ditemukan di Google, dan membangun kepercayaan calon pelanggan. Sebuah toko dengan website yang rapi terlihat jauh lebih kredibel dibanding yang hanya mengandalkan chat WhatsApp.",
+        text: "Sayangnya, banyak pelaku UMKM ragu memulai karena tiga hal: bingung jenis website yang dibutuhkan, takut mahal, dan khawatir salah memilih vendor. Artikel ini membahas ketiganya secara tuntas agar Anda bisa memesan jasa pembuatan website dengan percaya diri dan tidak salah langkah.",
+      },
+      { type: "h2", text: "Kenapa UMKM Benar-Benar Butuh Website?" },
+      {
+        type: "p",
+        text: "Pertanyaan wajar yang sering muncul: \"Saya sudah aktif di Instagram dan WhatsApp, kenapa masih perlu website?\" Media sosial memang penting untuk menjangkau dan berinteraksi, tetapi ada satu kelemahan mendasar — Anda tidak memilikinya. Algoritma, jangkauan, bahkan keberadaan akun Anda sepenuhnya dikendalikan platform. Website, sebaliknya, adalah aset digital milik Anda sepenuhnya.",
+      },
+      {
+        type: "p",
+        text: "Selain soal kepemilikan, website memberi tiga keuntungan yang sulit didapat dari media sosial saja. Pertama, kredibilitas: bisnis dengan website yang rapi terlihat lebih profesional dan tepercaya dibanding yang hanya mengandalkan chat. Kedua, ditemukan di Google: saat orang mencari produk atau jasa Anda, website yang dioptimalkan bisa muncul — sesuatu yang tidak bisa dilakukan akun media sosial. Ketiga, kontrol penuh atas pengalaman pelanggan, dari tampilan hingga alur pembelian.",
       },
       { type: "h2", text: "Jenis Website yang Umum untuk UMKM" },
       {
+        type: "p",
+        text: "Tidak semua bisnis butuh jenis website yang sama. Memahami pilihannya membantu Anda tidak membayar lebih untuk fitur yang tidak diperlukan:",
+      },
+      {
         type: "ul",
         items: [
-          "Landing Page — satu halaman fokus untuk promosi produk atau menangkap leads.",
-          "Company Profile — beberapa halaman berisi profil, layanan, dan kontak bisnis.",
-          "Toko Online (E-commerce) — katalog produk dengan keranjang dan pembayaran.",
-          "Web App Custom — sistem khusus sesuai alur bisnis, seperti booking atau dashboard.",
+          "**Landing Page** — satu halaman yang fokus pada satu tujuan, misalnya promosi produk atau menangkap calon pelanggan (leads). Cocok untuk kampanye atau bisnis dengan satu penawaran utama.",
+          "**Company Profile** — beberapa halaman berisi profil, layanan, portofolio, dan kontak. Ideal untuk membangun kredibilitas bisnis jasa atau B2B.",
+          "**Toko Online (E-commerce)** — katalog produk lengkap dengan keranjang dan pembayaran. Tepat jika Anda ingin berjualan langsung dari website sendiri.",
+          "**Web App Custom** — sistem khusus sesuai alur bisnis, seperti booking, dashboard, atau keanggotaan. Untuk kebutuhan yang tidak bisa diselesaikan website standar.",
         ],
       },
-      { type: "h2", text: "Estimasi Biaya Pembuatan Website" },
+      { type: "h2", text: "Berapa Biaya Pembuatan Website di Indonesia?" },
       {
         type: "p",
-        text: "Biaya sangat bergantung pada kompleksitas. Sebagai gambaran kasar di pasar Indonesia: landing page mulai dari ratusan ribu hingga jutaan rupiah, company profile beberapa juta, sementara toko online dan web app custom bisa lebih tinggi tergantung fitur. Hindari harga yang terlalu murah tanpa kejelasan — biasanya berujung pada biaya tersembunyi atau hasil seadanya.",
+        text: "Biaya pembuatan website sangat bergantung pada kompleksitas, jadi tidak ada satu angka pasti. Sebagai gambaran umum di pasar Indonesia: landing page sederhana biasanya paling terjangkau, company profile berada di tengah, sementara toko online dan web app custom memerlukan investasi lebih besar karena fitur dan logika di baliknya jauh lebih banyak.",
       },
-      { type: "h2", text: "Tips Memilih Jasa Pembuatan Website" },
       {
         type: "p",
-        text: "Pilih vendor yang transparan soal harga dan timeline, mau mendengarkan kebutuhan Anda, serta memberikan dukungan setelah website jadi. Mintalah contoh portofolio dan pastikan Anda mendapatkan akses penuh ke domain dan hosting. Komunikasi yang jelas dari awal adalah indikator terbaik bahwa proyek akan berjalan lancar.",
+        text: "Yang lebih penting dari angka adalah memahami apa yang membentuk biaya: jumlah halaman, kerumitan desain, fitur khusus (pembayaran, booking, integrasi), serta kebutuhan akan domain, hosting, dan perawatan. Waspadai juga harga yang terlalu murah tanpa rincian jelas — sering kali berujung pada biaya tersembunyi, hasil seadanya, atau Anda tidak benar-benar memiliki akses ke website Anda sendiri.",
+      },
+      { type: "h2", text: "Tips Memilih Jasa Pembuatan Website agar Tidak Menyesal" },
+      {
+        type: "p",
+        text: "Vendor yang tepat akan membuat perbedaan besar antara proyek yang lancar dan yang penuh drama. Sebelum memutuskan, perhatikan hal-hal berikut:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Transparan soal harga, ruang lingkup, dan timeline sejak awal.",
+          "Mau mendengarkan tujuan bisnis Anda, bukan langsung menjual paket.",
+          "Punya portofolio nyata yang bisa Anda lihat dan akses.",
+          "Memastikan Anda mendapat kepemilikan penuh atas domain dan hosting.",
+          "Menyediakan dukungan dan perawatan setelah website live.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Karena Google kini menilai website dari versi mobile-nya terlebih dahulu (mobile-first indexing, yang [rampung pada Juli 2024 menurut dokumentasi Google](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-first-indexing)), pastikan juga vendor membangun website yang cepat dan rapi di ponsel — bukan hanya bagus di layar komputer. Ini bukan sekadar soal tampilan, tapi memengaruhi seberapa mudah bisnis Anda ditemukan.",
       },
       cta(
-        "Kreativita Sinergi membantu UMKM membangun website profesional dengan harga terjangkau dan pendampingan penuh. Konsultasi awal gratis — ceritakan kebutuhan Anda dan kami bantu petakan solusinya."
+        "Kreativita Sinergi membantu UMKM membangun website profesional, cepat, dan mobile-friendly dengan harga terjangkau serta pendampingan penuh. Konsultasi awal gratis — ceritakan kebutuhan Anda dan kami bantu petakan solusinya."
       ),
+    ],
+    sources: [
+      {
+        label: "DataReportal — Digital 2025: Indonesia (pengguna internet & penetrasi)",
+        url: "https://datareportal.com/reports/digital-2025-indonesia",
+      },
+      {
+        label: "Google Search Central — Mobile-first indexing",
+        url: "https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-first-indexing",
+      },
     ],
   },
   {
@@ -190,35 +235,49 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Punya toko online sendiri memberi Anda kendali penuh atas brand, data pelanggan, dan margin keuntungan — tanpa harus bersaing harga di tengah ribuan penjual marketplace. Berikut langkah membangunnya dari awal.",
+        text: "Memiliki toko online sendiri memberi Anda sesuatu yang tidak bisa diberikan marketplace: kendali penuh atas brand, data pelanggan, dan margin keuntungan — tanpa harus bersaing harga di tengah ribuan penjual lain. Tapi membangunnya butuh lebih dari sekadar mengunggah produk. Berikut langkah membangun toko online yang benar-benar siap menerima pesanan, dari nol.",
       },
       { type: "h2", text: "1. Tentukan Produk & Target Pasar" },
       {
         type: "p",
-        text: "Sebelum menyentuh teknologi, pastikan Anda paham siapa pembeli ideal Anda dan masalah apa yang produk Anda selesaikan. Ini memengaruhi tampilan, copywriting, hingga metode pembayaran yang ditawarkan.",
+        text: "Sebelum menyentuh teknologi, pastikan Anda paham siapa pembeli ideal Anda dan masalah apa yang produk Anda selesaikan. Pemahaman ini memengaruhi hampir semua keputusan berikutnya — mulai dari tampilan, gaya bahasa (copywriting), hingga metode pembayaran dan pengiriman yang paling relevan untuk mereka.",
       },
       { type: "h2", text: "2. Pilih Platform yang Tepat" },
       {
+        type: "p",
+        text: "Ada beberapa pendekatan, masing-masing dengan kelebihannya:",
+      },
+      {
         type: "ul",
         items: [
-          "Website custom — fleksibel penuh, cocok untuk brand yang ingin tampil beda.",
-          "Platform siap pakai — cepat, tapi terbatas dan ada biaya bulanan.",
-          "Hybrid — toko sendiri yang tetap terhubung ke marketplace & media sosial.",
+          "**Website custom** — fleksibel penuh dan cepat, cocok untuk brand yang ingin tampil beda dan tumbuh jangka panjang.",
+          "**Platform siap pakai** — cepat diluncurkan, tapi kustomisasinya terbatas dan biasanya ada biaya bulanan berkelanjutan.",
+          "**Hybrid** — toko sendiri sebagai pusat, tetap terhubung dengan marketplace dan media sosial untuk jangkauan.",
         ],
       },
-      { type: "h2", text: "3. Siapkan Produk, Pembayaran & Pengiriman" },
+      { type: "h2", text: "3. Permudah Checkout — Ini Penentu Penjualan" },
       {
         type: "p",
-        text: "Unggah foto produk berkualitas, tulis deskripsi yang jujur dan menarik, lalu integrasikan payment gateway serta opsi ongkos kirim. Kemudahan checkout sangat menentukan apakah pengunjung jadi membeli atau kabur.",
+        text: "Banyak toko online kehilangan penjualan justru di langkah terakhir. [Baymard Institute](https://baymard.com/lists/cart-abandonment-rate), yang merangkum 50 studi berbeda, menemukan rata-rata **tingkat pengabaian keranjang belanja mencapai sekitar 70%** — artinya 7 dari 10 calon pembeli yang sudah menaruh produk di keranjang akhirnya pergi tanpa menyelesaikan pembayaran. Salah satu penyebab terbesarnya adalah proses checkout yang rumit, mengejutkan (biaya tak terduga), atau memaksa membuat akun.",
+      },
+      {
+        type: "p",
+        text: "Karena itu, fokuskan perhatian pada kemudahan membeli: unggah foto produk berkualitas, tulis deskripsi yang jujur dan menarik, tampilkan ongkos kirim sejak awal, sediakan metode pembayaran populer (termasuk QRIS dan e-wallet), dan pangkas langkah checkout sesedikit mungkin. Setiap friksi yang Anda hilangkan berpotensi menyelamatkan penjualan.",
       },
       { type: "h2", text: "4. Datangkan Pengunjung" },
       {
         type: "p",
-        text: "Toko bagus tak berarti tanpa pengunjung. Kombinasikan SEO, media sosial, dan iklan berbayar. Pastikan website cepat dan ramah seluler karena mayoritas pembeli Indonesia berbelanja lewat HP.",
+        text: "Toko terbaik sekalipun tidak berarti tanpa pengunjung. Kombinasikan SEO agar ditemukan di Google, media sosial untuk membangun hubungan, dan iklan berbayar untuk percepatan. Dan karena mayoritas pembeli Indonesia berbelanja lewat ponsel, pastikan toko Anda cepat serta nyaman digunakan di layar kecil — pengalaman mobile yang buruk langsung menggerus konversi.",
       },
       cta(
-        "Kreativita Sinergi membangun toko online yang cepat, aman, dan SEO-friendly — lengkap dengan integrasi pembayaran. Konsultasi gratis untuk memulai."
+        "Kreativita Sinergi membangun toko online yang cepat, aman, dan SEO-friendly — dengan alur checkout yang ringkas dan integrasi pembayaran. Konsultasi gratis untuk memulai."
       ),
+    ],
+    sources: [
+      {
+        label: "Baymard Institute — Cart Abandonment Rate Statistics (rata-rata ~70%)",
+        url: "https://baymard.com/lists/cart-abandonment-rate",
+      },
     ],
   },
   {
@@ -315,36 +374,63 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "SEO (Search Engine Optimization) adalah upaya membuat website Anda mudah ditemukan di mesin pencari seperti Google. Dengan SEO yang baik, Anda mendapat pengunjung secara gratis dan berkelanjutan — tanpa terus membayar iklan.",
+        text: "SEO (Search Engine Optimization) adalah upaya membuat website Anda mudah ditemukan di mesin pencari seperti Google. Daya tariknya jelas: berbeda dengan iklan yang berhenti mendatangkan pengunjung begitu anggaran habis, peringkat organik yang baik bisa terus mengalirkan trafik secara gratis selama berbulan-bulan. Bagi UMKM dengan anggaran terbatas, SEO adalah salah satu investasi pemasaran paling masuk akal.",
+      },
+      {
+        type: "p",
+        text: "Kabar baiknya, prinsip dasar SEO tidak serumit yang dibayangkan. Google sendiri merangkum fondasinya dalam [Google Search Essentials](https://developers.google.com/search/docs/essentials), dan inti pesannya konsisten: buat konten yang bermanfaat untuk manusia, lalu pastikan mesin pencari bisa menemukan dan memahaminya. Mari uraikan langkah-langkahnya.",
       },
       { type: "h2", text: "1. Riset Kata Kunci" },
       {
         type: "p",
-        text: "Mulailah dengan memahami apa yang diketik calon pelanggan saat mencari produk Anda. Targetkan kata kunci yang relevan dan realistis, terutama frasa spesifik (long-tail) yang persaingannya lebih ringan.",
+        text: "Semuanya dimulai dari memahami bahasa pelanggan Anda. Apa yang sebenarnya mereka ketik di Google saat mencari produk atau jasa seperti milik Anda? Kata kunci yang terlalu umum (misalnya \"website\") biasanya sangat kompetitif. Sebagai pemula, targetkan frasa yang lebih spesifik dan panjang (long-tail) seperti \"jasa pembuatan website untuk UMKM\" — volumenya lebih kecil, tapi persaingannya jauh lebih ringan dan niat belinya lebih jelas.",
       },
       { type: "h2", text: "2. Optimasi On-Page" },
       {
+        type: "p",
+        text: "On-page SEO adalah cara Anda menata setiap halaman agar relevan dan mudah dipahami mesin pencari. Beberapa hal mendasar yang berdampak besar:",
+      },
+      {
         type: "ul",
         items: [
-          "Gunakan kata kunci di judul, heading, dan paragraf pembuka secara alami.",
-          "Tulis meta title & description yang menarik untuk diklik.",
-          "Gunakan URL yang bersih dan deskriptif.",
-          "Tambahkan teks alternatif (alt) pada gambar.",
+          "Gunakan kata kunci utama di judul, heading, dan paragraf pembuka — secara alami, jangan dipaksakan.",
+          "Tulis **meta title** dan **meta description** yang menarik; keduanya adalah \"iklan gratis\" Anda di hasil pencarian.",
+          "Gunakan struktur URL yang bersih dan deskriptif.",
+          "Tambahkan teks alternatif (alt) pada gambar agar konteksnya terbaca.",
+          "Bangun tautan internal antar artikel agar pengunjung (dan Google) menjelajah lebih dalam.",
         ],
       },
-      { type: "h2", text: "3. Kecepatan & Mobile-Friendly" },
+      { type: "h2", text: "3. Pengalaman Halaman: Kecepatan & Mobile" },
       {
         type: "p",
-        text: "Google mengutamakan website yang cepat dan nyaman di HP. Kompres gambar, gunakan hosting yang baik, dan pastikan tampilan responsif di semua perangkat.",
+        text: "Google tidak hanya menilai isi, tapi juga pengalaman menggunakannya. Lewat [sinyal Page Experience](https://developers.google.com/search/docs/appearance/page-experience), faktor seperti kecepatan (Core Web Vitals), keramahan seluler, dan keamanan (HTTPS) ikut diperhitungkan — terutama ketika beberapa halaman sama-sama relevan. Pastikan website Anda cepat, responsif di HP, dan menggunakan HTTPS.",
       },
       { type: "h2", text: "4. Konten Berkualitas & Backlink" },
       {
         type: "p",
-        text: "Konten yang benar-benar membantu pembaca adalah fondasi SEO. Tambah artikel bermanfaat secara rutin, dan dapatkan tautan dari situs lain yang tepercaya untuk memperkuat otoritas domain Anda.",
+        text: "Pada akhirnya, konten yang benar-benar membantu pembaca adalah fondasi SEO yang paling tahan lama. Google secara eksplisit mengarahkan pembuat konten untuk memprioritaskan orang, bukan mesin, lewat panduan [\"Creating helpful, reliable, people-first content\"](https://developers.google.com/search/docs/fundamentals/creating-helpful-content). Terbitkan artikel bermanfaat secara konsisten, dan seiring waktu dapatkan backlink — tautan dari situs lain yang tepercaya — untuk memperkuat otoritas domain Anda.",
+      },
+      {
+        type: "p",
+        text: "Satu hal yang perlu diingat: SEO adalah maraton, bukan sprint. Hasilnya menumpuk perlahan, tapi efeknya berlipat ganda dan bertahan lama.",
       },
       cta(
-        "Kreativita Sinergi membangun website yang SEO-friendly sejak fondasi dan bisa membantu strategi kontennya. Konsultasi gratis untuk mendongkrak visibilitas bisnis Anda."
+        "Kreativita Sinergi membangun website yang SEO-friendly sejak fondasi — cepat, mobile-friendly, dan terstruktur rapi — serta bisa membantu strategi kontennya. Konsultasi gratis untuk mendongkrak visibilitas bisnis Anda."
       ),
+    ],
+    sources: [
+      {
+        label: "Google Search Central — Search Essentials",
+        url: "https://developers.google.com/search/docs/essentials",
+      },
+      {
+        label: "Google Search Central — Creating helpful, reliable, people-first content",
+        url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      },
+      {
+        label: "Google Search Central — Understanding page experience",
+        url: "https://developers.google.com/search/docs/appearance/page-experience",
+      },
     ],
   },
   {
@@ -361,26 +447,46 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Penelitian menunjukkan pengunjung akan meninggalkan website yang butuh lebih dari beberapa detik untuk dimuat. Selain merugikan pengalaman pengguna, kecepatan juga menjadi faktor peringkat resmi Google. Mari bahas cara membuatnya kencang.",
+        text: "Kecepatan website bukan sekadar soal kenyamanan — ia memengaruhi langsung pengalaman pengguna sekaligus peringkat di Google. Sejak 2021, pengalaman halaman (page experience) menjadi faktor peringkat resmi, dan kecepatan adalah komponen intinya. Pengunjung pun tidak sabar: halaman yang lambat membuat mereka menutup tab sebelum konten sempat muncul.",
+      },
+      { type: "h2", text: "Seberapa Cepat \"Cukup Cepat\"?" },
+      {
+        type: "p",
+        text: "Google memberi tolok ukur yang konkret lewat metrik Core Web Vitals. Berdasarkan [dokumentasi Page Experience Google](https://developers.google.com/search/docs/appearance/page-experience), sebuah halaman dianggap baik bila memenuhi: **LCP (Largest Contentful Paint) di bawah 2,5 detik** — seberapa cepat konten utama tampil; **INP (Interaction to Next Paint) di bawah 200 milidetik** — seberapa responsif halaman saat ditekan atau diklik; dan **CLS (Cumulative Layout Shift) di bawah 0,1** — seberapa stabil tata letak agar elemen tidak bergeser tiba-tiba. Anda bisa mengukurnya gratis lewat [PageSpeed Insights](https://pagespeed.web.dev/).",
       },
       { type: "h2", text: "Penyebab Umum Website Lambat" },
       {
         type: "ul",
         items: [
-          "Gambar berukuran besar yang tidak dikompres.",
-          "Terlalu banyak script & plugin yang tidak perlu.",
-          "Hosting murah dengan performa rendah.",
-          "Tidak menggunakan caching atau CDN.",
+          "Gambar berukuran besar yang tidak dikompres atau belum pakai format modern.",
+          "Terlalu banyak script dan plugin yang tidak perlu.",
+          "Hosting murah dengan performa server rendah.",
+          "Tidak memanfaatkan caching atau CDN.",
+          "Pop-up dan iklan yang membebani pemuatan halaman.",
         ],
       },
       { type: "h2", text: "Cara Mempercepatnya" },
       {
         type: "p",
-        text: "Kompres dan gunakan format gambar modern, minimalkan kode yang tidak perlu, aktifkan caching, dan gunakan hosting yang memadai. Teknologi modern seperti rendering statis (SSG) juga membuat halaman tampil hampir instan.",
+        text: "Mulai dari yang berdampak paling besar: kompres gambar dan gunakan format modern seperti WebP, lalu minimalkan kode serta script yang tidak terpakai. Aktifkan caching, gunakan CDN untuk menyajikan konten lebih dekat ke pengguna, dan pilih hosting yang memadai. Untuk hasil terbaik, teknologi modern seperti rendering statis (Static Site Generation/SSG) menghasilkan halaman HTML siap saji yang tampil hampir instan.",
+      },
+      {
+        type: "p",
+        text: "Yang penting diingat: optimasi kecepatan bukan pekerjaan sekali jadi. Ukur secara berkala, terutama setelah menambah konten atau fitur baru, agar website tetap memenuhi ambang Core Web Vitals.",
       },
       cta(
-        "Kreativita Sinergi membangun website dengan teknologi modern yang ringan dan cepat secara default. Konsultasikan kebutuhan Anda secara gratis."
+        "Kreativita Sinergi membangun website dengan teknologi modern yang ringan dan cepat secara default — memperhatikan ambang Core Web Vitals sejak awal. Konsultasikan kebutuhan Anda secara gratis."
       ),
+    ],
+    sources: [
+      {
+        label: "Google Search Central — Understanding page experience (Core Web Vitals)",
+        url: "https://developers.google.com/search/docs/appearance/page-experience",
+      },
+      {
+        label: "Google — PageSpeed Insights (alat ukur kecepatan)",
+        url: "https://pagespeed.web.dev/",
+      },
     ],
   },
   {
@@ -915,27 +1021,42 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Google Business Profile (dulu Google Bisnisku) adalah salah satu alat paling ampuh — dan gratis — untuk UMKM. Dengan profil yang dioptimalkan, bisnis Anda bisa muncul di Google Maps dan pencarian lokal saat orang mencari layanan di sekitar mereka.",
+        text: "Google Business Profile (dulu bernama Google Bisnisku) adalah salah satu alat paling ampuh — dan sepenuhnya gratis — untuk UMKM. Dengan profil yang lengkap dan dioptimalkan, bisnis Anda bisa muncul di Google Maps dan hasil pencarian lokal tepat saat orang mencari layanan \"di dekat saya\". Untuk usaha dengan lokasi fisik seperti kafe, bengkel, atau klinik, ini sering menjadi sumber pelanggan baru yang paling efektif.",
       },
-      { type: "h2", text: "Langkah Optimasi" },
+      { type: "h2", text: "Kenapa Ulasan Sangat Menentukan" },
+      {
+        type: "p",
+        text: "Di balik pencarian lokal, ada satu faktor yang sangat memengaruhi keputusan: ulasan. Menurut [Local Consumer Review Survey dari BrightLocal](https://www.brightlocal.com/research/local-consumer-review-survey/), **sekitar 97% konsumen membaca ulasan online untuk bisnis lokal**, dan hanya segelintir yang mengaku tidak pernah membacanya. Artinya, reputasi Anda di Google sudah dinilai calon pelanggan bahkan sebelum mereka menghubungi Anda. Profil dengan banyak ulasan positif memberi keunggulan besar dibanding pesaing yang profilnya kosong.",
+      },
+      { type: "h2", text: "Langkah Optimasi Profil" },
       {
         type: "ul",
         items: [
-          "Lengkapi semua informasi: nama, alamat, jam buka, kategori.",
-          "Unggah foto berkualitas dari tempat dan produk.",
-          "Kumpulkan dan balas ulasan pelanggan.",
-          "Posting update dan promo secara berkala.",
-          "Pastikan informasi konsisten dengan website Anda.",
+          "Lengkapi semua informasi: nama, alamat, jam buka, kategori, dan nomor telepon.",
+          "Unggah foto berkualitas dari tempat usaha, produk, dan suasana.",
+          "Aktif mengumpulkan ulasan pelanggan — dan balas semuanya, baik yang positif maupun negatif.",
+          "Posting update, promo, dan kabar terbaru secara berkala.",
+          "Pastikan nama, alamat, dan telepon (NAP) konsisten dengan yang tertera di website Anda.",
         ],
       },
-      { type: "h2", text: "Kenapa Ini Penting" },
       {
         type: "p",
-        text: "Banyak keputusan pembelian dimulai dari pencarian lokal. Profil yang lengkap dengan ulasan positif membuat bisnis Anda terlihat kredibel dan dipilih dibanding pesaing. Ini terutama vital untuk usaha dengan lokasi fisik.",
+        text: "Konsistensi data antara Google Business Profile dan website adalah sinyal kepercayaan yang penting bagi mesin pencari. Karena itu, mengelola keduanya secara selaras memberi dampak yang lebih besar daripada masing-masing sendirian.",
+      },
+      { type: "h2", text: "Membalas Ulasan: Kecil tapi Berdampak" },
+      {
+        type: "p",
+        text: "Membalas ulasan menunjukkan bahwa Anda mendengarkan dan peduli. Ucapan terima kasih untuk ulasan positif, serta tanggapan tenang dan solutif untuk yang negatif, membangun citra profesional di mata calon pelanggan yang membaca. Sering kali, cara Anda menangani keluhan justru lebih meyakinkan daripada ulasan bintang lima itu sendiri.",
       },
       cta(
-        "Kreativita Sinergi membantu menyelaraskan website dengan profil Google Anda untuk visibilitas lokal maksimal. Konsultasi gratis untuk memulai."
+        "Kreativita Sinergi membantu menyelaraskan website dengan Google Business Profile Anda untuk visibilitas lokal maksimal. Konsultasi gratis untuk memulai."
       ),
+    ],
+    sources: [
+      {
+        label: "BrightLocal — Local Consumer Review Survey (97% konsumen membaca ulasan)",
+        url: "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      },
     ],
   },
   {
@@ -1609,26 +1730,58 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Sebagian besar orang Indonesia mengakses internet lewat ponsel. Jika website Anda sulit dibaca atau dioperasikan di layar kecil, Anda kehilangan calon pelanggan sekaligus poin di mata Google yang kini mengutamakan versi mobile.",
+        text: "Di Indonesia, ponsel bukan sekadar perangkat tambahan — ia adalah pintu utama menuju internet. Laporan [Digital 2025 Indonesia dari DataReportal](https://datareportal.com/reports/digital-2025-indonesia) mencatat sekitar **356 juta koneksi seluler** aktif pada awal 2025, setara 125% dari total populasi, dengan 96,4% di antaranya sudah broadband (3G/4G/5G). Dengan kata lain, jika website Anda sulit dibaca atau dioperasikan di layar kecil, Anda kehilangan calon pelanggan di tempat mereka paling banyak menghabiskan waktu.",
       },
-      { type: "h2", text: "Ciri Website Mobile-Friendly" },
+      {
+        type: "p",
+        text: "Masalahnya tidak berhenti di kenyamanan pengguna. Sejak Google merampungkan transisi ke mobile-first indexing pada Juli 2024, [Googlebot menilai dan mengindeks website dari versi mobile-nya terlebih dahulu](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-first-indexing). Artinya, tampilan mobile yang buruk tidak hanya membuat pengunjung kabur — ia juga bisa menurunkan posisi Anda di hasil pencarian.",
+      },
+      { type: "h2", text: "Apa Itu Website Mobile-Friendly?" },
+      {
+        type: "p",
+        text: "Website mobile-friendly adalah website yang dirancang agar nyaman digunakan di layar ponsel, bukan sekadar versi kecil dari tampilan desktop. Pendekatan yang umum dipakai adalah responsive design, di mana tata letak otomatis menyesuaikan ukuran layar. Ciri-cirinya:",
+      },
       {
         type: "ul",
         items: [
-          "Teks terbaca tanpa perlu zoom.",
-          "Tombol cukup besar dan mudah ditekan dengan jari.",
-          "Tata letak menyesuaikan ukuran layar (responsif).",
-          "Gambar termuat cepat dan tidak memberatkan.",
+          "Teks terbaca jelas tanpa perlu mencubit-zoom.",
+          "Tombol dan tautan cukup besar serta berjarak agar mudah ditekan dengan jari.",
+          "Tata letak menyesuaikan lebar layar secara otomatis (responsif).",
+          "Gambar teroptimasi sehingga termuat cepat di koneksi seluler.",
+          "Tidak ada pop-up mengganggu yang menutupi konten utama.",
         ],
       },
-      { type: "h2", text: "Dampaknya pada Bisnis" },
+      { type: "h2", text: "Kecepatan Adalah Bagian dari Pengalaman Mobile" },
       {
         type: "p",
-        text: "Pengalaman mobile yang baik membuat pengunjung betah, menjelajah lebih lama, dan lebih mungkin menghubungi atau membeli. Sebaliknya, tampilan berantakan di HP membuat mereka langsung pergi ke pesaing.",
+        text: "Ramah seluler tidak cukup kalau lambat. Google mengukur kualitas pengalaman halaman lewat metrik Core Web Vitals, yang menjadi faktor peringkat resmi sejak 2021. Berdasarkan [dokumentasi Page Experience dari Google](https://developers.google.com/search/docs/appearance/page-experience), sebuah halaman idealnya memenuhi ambang berikut: **LCP di bawah 2,5 detik** (kecepatan memuat konten utama), **INP di bawah 200 milidetik** (responsivitas terhadap interaksi), dan **CLS di bawah 0,1** (kestabilan tata letak agar elemen tidak \"loncat\" saat dimuat).",
+      },
+      {
+        type: "p",
+        text: "Angka-angka ini terdengar teknis, tapi intinya sederhana: halaman yang cepat, responsif, dan stabil membuat pengunjung betah — dan Google menghargainya.",
+      },
+      { type: "h2", text: "Dampaknya pada Bisnis Anda" },
+      {
+        type: "p",
+        text: "Pengalaman mobile yang baik membuat pengunjung menjelajah lebih lama dan lebih mungkin menghubungi atau membeli. Sebaliknya, tampilan berantakan atau lambat di HP membuat mereka langsung menutup tab dan beralih ke pesaing — sering kali tanpa pernah Anda sadari. Di pasar yang didominasi pengguna ponsel seperti Indonesia, mobile-friendly bukan fitur tambahan, melainkan syarat dasar.",
       },
       cta(
-        "Semua website buatan Kreativita Sinergi responsif dan ramah seluler secara default. Konsultasi gratis untuk memastikan bisnis Anda tampil prima di HP."
+        "Semua website buatan Kreativita Sinergi responsif, cepat, dan ramah seluler secara default — dibangun dengan memperhatikan Core Web Vitals. Konsultasi gratis untuk memastikan bisnis Anda tampil prima di HP."
       ),
+    ],
+    sources: [
+      {
+        label: "DataReportal — Digital 2025: Indonesia (koneksi seluler)",
+        url: "https://datareportal.com/reports/digital-2025-indonesia",
+      },
+      {
+        label: "Google Search Central — Mobile-first indexing",
+        url: "https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-first-indexing",
+      },
+      {
+        label: "Google Search Central — Understanding page experience (Core Web Vitals)",
+        url: "https://developers.google.com/search/docs/appearance/page-experience",
+      },
     ],
   },
   {
@@ -2017,27 +2170,38 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Media sosial adalah tempat pelanggan menghabiskan waktu, jadi wajar bisnis ingin hadir di sana. Tapi sekadar posting tanpa strategi jarang membuahkan hasil. Berikut fondasi social media marketing yang efektif.",
+        text: "Media sosial adalah tempat pelanggan menghabiskan banyak waktu mereka, jadi wajar bisnis ingin hadir di sana. Skalanya pun besar: menurut [laporan DataReportal](https://datareportal.com/reports/digital-2026-indonesia), terdapat sekitar **180 juta identitas pengguna media sosial** di Indonesia pada akhir 2025 — setara 62,9% populasi. Potensinya jelas. Masalahnya, sekadar posting tanpa strategi jarang membuahkan hasil. Berikut fondasi social media marketing yang efektif.",
       },
-      { type: "h2", text: "Langkah Dasar" },
+      { type: "h2", text: "Langkah Dasar yang Sering Terlewat" },
       {
         type: "ul",
         items: [
-          "Pilih platform tempat pelanggan Anda benar-benar berada.",
-          "Tentukan tujuan: awareness, interaksi, atau penjualan.",
-          "Buat konten yang bernilai, bukan hanya jualan.",
-          "Konsisten dalam jadwal dan gaya brand.",
-          "Arahkan pengikut ke website atau WhatsApp untuk konversi.",
+          "Pilih platform tempat pelanggan Anda benar-benar berada — bukan semua platform sekaligus.",
+          "Tentukan tujuan yang jelas: kesadaran merek (awareness), interaksi, atau penjualan.",
+          "Buat konten yang bernilai bagi audiens, bukan hanya jualan terus-menerus.",
+          "Jaga konsistensi jadwal dan gaya brand agar mudah dikenali.",
+          "Arahkan pengikut ke website atau WhatsApp untuk mengubah perhatian menjadi konversi.",
         ],
+      },
+      { type: "h2", text: "Aturan 80/20 dalam Konten" },
+      {
+        type: "p",
+        text: "Salah satu kesalahan paling umum adalah menjadikan media sosial sekadar papan iklan. Pendekatan yang lebih efektif: sekitar 80% konten memberi nilai — tips, edukasi, hiburan, atau cerita — dan 20% sisanya promosi langsung. Audiens mengikuti Anda karena mendapat sesuatu; kepercayaan yang terbangun itulah yang akhirnya mendorong mereka membeli.",
       },
       { type: "h2", text: "Sosmed dan Website Saling Melengkapi" },
       {
         type: "p",
-        text: "Media sosial bagus untuk menjangkau dan membangun hubungan, tapi Anda tidak memilikinya. Website adalah rumah Anda yang permanen. Strategi terbaik menggunakan sosmed untuk menarik perhatian, lalu mengarahkan ke website untuk konversi.",
+        text: "Penting diingat: sebesar apa pun jangkauan media sosial, Anda tidak memilikinya. Algoritma bisa berubah, jangkauan bisa turun, dan akun bisa dibatasi sewaktu-waktu. Website adalah rumah permanen Anda. Strategi terbaik menggunakan media sosial untuk menarik perhatian, lalu mengarahkan audiens ke website untuk konversi dan pengumpulan data pelanggan yang benar-benar Anda miliki.",
       },
       cta(
-        "Kreativita Sinergi membangun website yang terhubung mulus dengan media sosial Anda. Konsultasi gratis untuk menyatukan kehadiran digital bisnis."
+        "Kreativita Sinergi membangun website yang terhubung mulus dengan media sosial Anda, siap mengubah pengikut menjadi pelanggan. Konsultasi gratis untuk menyatukan kehadiran digital bisnis."
       ),
+    ],
+    sources: [
+      {
+        label: "DataReportal — Digital 2026: Indonesia (pengguna media sosial)",
+        url: "https://datareportal.com/reports/digital-2026-indonesia",
+      },
     ],
   },
   {
@@ -2293,6 +2457,372 @@ export const posts: BlogPost[] = [
       },
       cta(
         "Kreativita Sinergi membantu UMKM memanfaatkan teknologi tepat guna — termasuk AI — dalam website dan sistem bisnis. Konsultasi gratis untuk memulai."
+      ),
+    ],
+  },
+  {
+    slug: "website-untuk-startup",
+    title: "Website untuk Startup: Fondasi Digital yang Wajib Sejak Awal",
+    description:
+      "Kenapa startup butuh website sejak dini, elemen penting yang harus ada, dan bagaimana website mendukung penggalangan dana serta pertumbuhan.",
+    excerpt:
+      "Baru merintis startup? Website bukan sekadar formalitas — ia fondasi kredibilitas, marketing, dan pertumbuhan Anda.",
+    date: "2025-06-07",
+    category: "Strategi Digital",
+    readingTime: "5 menit",
+    keywords: ["website untuk startup", "website startup", "landing page startup", "kebutuhan digital startup"],
+    content: [
+      {
+        type: "p",
+        text: "Bagi startup, kesan pertama sangat menentukan — baik di mata calon pengguna maupun investor. Website yang profesional menunjukkan bahwa Anda serius dan kredibel, sekaligus menjadi pusat dari semua aktivitas pemasaran dan validasi ide.",
+      },
+      { type: "h2", text: "Elemen Penting Website Startup" },
+      {
+        type: "ul",
+        items: [
+          "Penjelasan jelas tentang masalah yang Anda selesaikan.",
+          "Ajakan bertindak: daftar, coba, atau hubungi.",
+          "Bukti awal: testimoni, mitra, atau angka traksi.",
+          "Halaman yang menangkap calon pengguna (waitlist/leads).",
+        ],
+      },
+      { type: "h2", text: "Mulai Ramping, Iterasi Cepat" },
+      {
+        type: "p",
+        text: "Startup bergerak cepat, jadi website pun sebaiknya bisa diperbarui dengan mudah seiring pivot dan pembelajaran. Mulai dari landing page yang fokus, lalu kembangkan sesuai kebutuhan dan masukan pasar.",
+      },
+      cta(
+        "Kreativita Sinergi membantu startup membangun website yang cepat, kredibel, dan mudah diiterasi. Konsultasi gratis untuk mewujudkan fondasi digital Anda."
+      ),
+    ],
+  },
+  {
+    slug: "cara-meningkatkan-conversion-rate",
+    title: "Cara Meningkatkan Conversion Rate Website agar Lebih Banyak Closing",
+    description:
+      "Strategi meningkatkan conversion rate website — dari CTA, kecepatan, kepercayaan, hingga pengurangan friksi, agar pengunjung jadi pelanggan.",
+    excerpt:
+      "Punya banyak pengunjung tapi sedikit yang membeli? Tingkatkan conversion rate dengan perbaikan-perbaikan berikut.",
+    date: "2025-05-31",
+    category: "Strategi Digital",
+    readingTime: "5 menit",
+    keywords: ["conversion rate", "meningkatkan konversi", "CRO", "optimasi konversi website"],
+    content: [
+      {
+        type: "p",
+        text: "Conversion rate adalah persentase pengunjung yang melakukan tindakan yang Anda inginkan — membeli, mendaftar, atau menghubungi. Menaikkannya sedikit saja bisa berdampak besar pada pendapatan, tanpa perlu menambah traffic.",
+      },
+      { type: "h2", text: "Faktor yang Mempengaruhi Konversi" },
+      {
+        type: "ul",
+        items: [
+          "CTA yang jelas dan menonjol di tempat yang tepat.",
+          "Kecepatan halaman — lambat berarti kehilangan pengunjung.",
+          "Bukti sosial untuk membangun kepercayaan.",
+          "Proses yang ringkas — kurangi langkah dan friksi.",
+          "Tampilan mobile yang nyaman.",
+        ],
+      },
+      { type: "h2", text: "Uji, Ukur, Perbaiki" },
+      {
+        type: "p",
+        text: "Optimasi konversi adalah proses berkelanjutan. Ubah satu elemen, ukur dampaknya, lalu pertahankan yang berhasil. Keputusan berbasis data jauh lebih efektif daripada menebak apa yang disukai pengunjung.",
+      },
+      cta(
+        "Kreativita Sinergi membangun website yang dirancang untuk konversi dan dapat membantu mengoptimalkannya. Konsultasi gratis untuk lebih banyak closing."
+      ),
+    ],
+  },
+  {
+    slug: "apa-itu-cloud-hosting",
+    title: "Apa Itu Cloud Hosting dan Kenapa Banyak Bisnis Beralih ke Sana?",
+    description:
+      "Penjelasan cloud hosting, perbedaannya dengan hosting tradisional, dan keuntungannya dari sisi skalabilitas, keandalan, dan biaya.",
+    excerpt:
+      "Sering dengar istilah cloud hosting? Pahami apa itu dan kenapa makin banyak bisnis memilihnya.",
+    date: "2025-05-24",
+    category: "Teknologi",
+    readingTime: "4 menit",
+    keywords: ["apa itu cloud hosting", "cloud hosting", "hosting cloud vs biasa", "keuntungan cloud"],
+    content: [
+      {
+        type: "p",
+        text: "Cloud hosting menyimpan dan menjalankan website Anda di jaringan server yang saling terhubung, bukan satu mesin tunggal. Pendekatan ini menawarkan keandalan dan fleksibilitas yang membuat banyak bisnis beralih dari hosting tradisional.",
+      },
+      { type: "h2", text: "Keunggulan Cloud Hosting" },
+      {
+        type: "ul",
+        items: [
+          "Skalabel — kapasitas mengikuti lonjakan trafik.",
+          "Andal — jika satu server bermasalah, yang lain mengambil alih.",
+          "Bayar sesuai pemakaian, lebih efisien.",
+          "Performa baik untuk pengguna dari berbagai lokasi.",
+        ],
+      },
+      { type: "h2", text: "Cocok untuk Siapa?" },
+      {
+        type: "p",
+        text: "Cloud hosting sangat cocok untuk website yang trafiknya naik-turun, toko online yang ramai saat promo, atau aplikasi yang butuh selalu online. Untuk bisnis yang serius dengan kehadiran digitalnya, ini investasi yang masuk akal.",
+      },
+      cta(
+        "Kreativita Sinergi menyiapkan hosting yang tepat untuk kebutuhan dan skala bisnis Anda. Konsultasi gratis untuk solusi yang andal."
+      ),
+    ],
+  },
+  {
+    slug: "aplikasi-manajemen-proyek-untuk-tim",
+    title: "Aplikasi Manajemen Proyek untuk Tim: Kerja Lebih Terorganisir",
+    description:
+      "Manfaat aplikasi manajemen proyek bagi tim dan fitur penting agar tugas, tenggat, dan kolaborasi berjalan rapi dan transparan.",
+    excerpt:
+      "Tugas tim berserakan di chat dan catatan? Aplikasi manajemen proyek membuat semuanya rapi dan transparan.",
+    date: "2025-05-17",
+    category: "Teknologi",
+    readingTime: "4 menit",
+    keywords: ["aplikasi manajemen proyek", "project management tool", "aplikasi tugas tim", "kolaborasi tim"],
+    content: [
+      {
+        type: "p",
+        text: "Seiring tim membesar, mengandalkan chat dan catatan untuk mengelola pekerjaan jadi kacau. Tugas terlewat, tenggat terlupakan, dan tidak jelas siapa mengerjakan apa. Aplikasi manajemen proyek menyatukan semuanya dalam satu tempat.",
+      },
+      { type: "h2", text: "Fitur yang Membantu" },
+      {
+        type: "ul",
+        items: [
+          "Daftar tugas dengan penanggung jawab dan tenggat.",
+          "Status pekerjaan yang terlihat semua anggota.",
+          "Diskusi dan lampiran per tugas.",
+          "Pandangan timeline atau papan untuk progres.",
+        ],
+      },
+      { type: "h2", text: "Transparansi Meningkatkan Produktivitas" },
+      {
+        type: "p",
+        text: "Saat semua orang melihat gambaran yang sama, koordinasi jadi lebih mudah dan tanggung jawab lebih jelas. Untuk kebutuhan unik, sistem manajemen proyek custom bisa disesuaikan persis dengan alur kerja tim Anda.",
+      },
+      cta(
+        "Kreativita Sinergi membangun sistem manajemen proyek custom sesuai alur kerja tim Anda. Konsultasi gratis untuk kerja yang lebih terorganisir."
+      ),
+    ],
+  },
+  {
+    slug: "website-untuk-komunitas-dan-organisasi",
+    title: "Website untuk Komunitas & Organisasi: Wadah Informasi dan Keterlibatan",
+    description:
+      "Manfaat website bagi komunitas, yayasan, dan organisasi — untuk informasi, keanggotaan, donasi, hingga membangun keterlibatan anggota.",
+    excerpt:
+      "Komunitas atau organisasi juga butuh rumah digital. Website membantu menyatukan informasi dan melibatkan anggota.",
+    date: "2025-05-10",
+    category: "Website",
+    readingTime: "4 menit",
+    keywords: ["website komunitas", "website organisasi", "website yayasan", "website nonprofit"],
+    content: [
+      {
+        type: "p",
+        text: "Komunitas, yayasan, dan organisasi sering bergantung pada grup chat yang berantakan untuk berbagi informasi. Website memberi wadah resmi yang rapi — tempat anggota dan publik menemukan info penting kapan saja.",
+      },
+      { type: "h2", text: "Fitur yang Berguna" },
+      {
+        type: "ul",
+        items: [
+          "Profil, visi-misi, dan kegiatan organisasi.",
+          "Agenda acara dan berita terbaru.",
+          "Pendaftaran anggota atau relawan.",
+          "Halaman donasi atau dukungan.",
+          "Galeri dokumentasi kegiatan.",
+        ],
+      },
+      { type: "h2", text: "Membangun Kredibilitas & Keterlibatan" },
+      {
+        type: "p",
+        text: "Website yang rapi membuat organisasi terlihat kredibel di mata calon anggota, donatur, maupun mitra. Ia juga menjadi pusat untuk menjaga keterlibatan dan transparansi kegiatan.",
+      },
+      cta(
+        "Kreativita Sinergi membangun website untuk komunitas dan organisasi dengan fitur sesuai kebutuhan. Konsultasi gratis untuk memulai."
+      ),
+    ],
+  },
+  {
+    slug: "optimasi-gambar-untuk-website",
+    title: "Optimasi Gambar untuk Website: Cepat Tanpa Mengorbankan Kualitas",
+    description:
+      "Panduan optimasi gambar agar website cepat — format modern, ukuran tepat, kompresi, dan lazy loading untuk performa dan SEO.",
+    excerpt:
+      "Gambar besar adalah penyebab utama website lambat. Pelajari cara mengoptimalkannya tanpa mengorbankan kualitas.",
+    date: "2025-05-03",
+    category: "Website",
+    readingTime: "4 menit",
+    keywords: ["optimasi gambar website", "kompres gambar", "gambar website cepat", "image optimization"],
+    content: [
+      {
+        type: "p",
+        text: "Gambar membuat website menarik, tapi juga sering menjadi penyebab utama halaman lambat. Untungnya, dengan beberapa teknik optimasi, Anda bisa menjaga tampilan tetap bagus sambil mempercepat website secara signifikan.",
+      },
+      { type: "h2", text: "Teknik Optimasi Gambar" },
+      {
+        type: "ul",
+        items: [
+          "Gunakan format modern seperti WebP yang lebih ringan.",
+          "Sesuaikan ukuran gambar dengan kebutuhan tampilan.",
+          "Kompres gambar tanpa penurunan kualitas yang terlihat.",
+          "Terapkan lazy loading agar gambar dimuat saat dibutuhkan.",
+        ],
+      },
+      { type: "h2", text: "Dampak ke Performa & SEO" },
+      {
+        type: "p",
+        text: "Gambar yang teroptimasi mempercepat loading, meningkatkan pengalaman pengguna, dan membantu peringkat di Google yang mempertimbangkan kecepatan. Hasilnya: pengunjung betah dan lebih mungkin berkonversi.",
+      },
+      cta(
+        "Kreativita Sinergi membangun website dengan gambar yang teroptimasi otomatis untuk kecepatan maksimal. Konsultasi gratis untuk website yang ngebut."
+      ),
+    ],
+  },
+  {
+    slug: "sistem-pos-untuk-toko-retail",
+    title: "Sistem POS untuk Toko Retail: Lebih dari Sekadar Mesin Kasir",
+    description:
+      "Manfaat sistem POS modern untuk toko retail — dari pencatatan penjualan, stok, hingga laporan yang membantu toko tumbuh.",
+    excerpt:
+      "Masih pakai kalkulator dan buku catatan? Sistem POS modern membuat toko retail Anda lebih efisien dan terkontrol.",
+    date: "2025-04-26",
+    category: "Bisnis Online",
+    readingTime: "5 menit",
+    keywords: ["sistem POS retail", "aplikasi kasir toko", "POS toko retail", "software toko"],
+    content: [
+      {
+        type: "p",
+        text: "Sistem POS (Point of Sale) modern bukan hanya alat menghitung pembayaran. Ia menjadi pusat operasional toko — mencatat penjualan, mengelola stok, dan memberi laporan yang membantu Anda membuat keputusan lebih baik.",
+      },
+      { type: "h2", text: "Manfaat POS Modern" },
+      {
+        type: "ul",
+        items: [
+          "Transaksi cepat dan minim kesalahan hitung.",
+          "Stok otomatis terupdate setiap penjualan.",
+          "Laporan penjualan dan produk terlaris.",
+          "Manajemen banyak kasir dan shift.",
+          "Dukungan berbagai metode pembayaran termasuk QRIS.",
+        ],
+      },
+      { type: "h2", text: "Data untuk Pertumbuhan" },
+      {
+        type: "p",
+        text: "Dengan data penjualan dan stok yang akurat, Anda bisa mengatur pembelian, menghindari kehabisan barang laris, dan fokus pada produk yang menguntungkan. POS yang baik mengubah toko Anda jadi lebih cerdas.",
+      },
+      cta(
+        "Loka Kasir dari Kreativita Sinergi adalah sistem POS modern untuk retail dan F&B, lengkap dengan stok, laporan, dan QRIS. Konsultasi gratis untuk kebutuhan toko Anda."
+      ),
+    ],
+  },
+  {
+    slug: "cara-membangun-kepercayaan-toko-online",
+    title: "Cara Membangun Kepercayaan di Toko Online agar Pembeli Yakin",
+    description:
+      "Strategi membangun kepercayaan di toko online — dari ulasan, transparansi, keamanan, hingga layanan, agar pengunjung berani membeli.",
+    excerpt:
+      "Pengunjung ragu membeli karena belum percaya? Bangun kepercayaan toko online Anda dengan langkah-langkah berikut.",
+    date: "2025-04-19",
+    category: "Bisnis Online",
+    readingTime: "5 menit",
+    keywords: ["kepercayaan toko online", "trust toko online", "tips toko online terpercaya", "meyakinkan pembeli"],
+    content: [
+      {
+        type: "p",
+        text: "Di belanja online, pembeli tidak bisa memegang produk atau bertemu penjual. Kepercayaan menjadi penentu utama apakah mereka berani bertransaksi. Berikut cara membangunnya agar pengunjung yakin membeli.",
+      },
+      { type: "h2", text: "Pembangun Kepercayaan" },
+      {
+        type: "ul",
+        items: [
+          "Tampilkan ulasan dan testimoni pelanggan nyata.",
+          "Informasi produk, harga, dan ongkir yang transparan.",
+          "Tampilan website profesional dan aman (HTTPS).",
+          "Kebijakan pengembalian dan kontak yang jelas.",
+          "Respons cepat terhadap pertanyaan pembeli.",
+        ],
+      },
+      { type: "h2", text: "Konsistensi Membangun Reputasi" },
+      {
+        type: "p",
+        text: "Kepercayaan tidak dibangun dalam semalam. Pelayanan yang konsisten, jujur, dan responsif lama-kelamaan menumbuhkan reputasi baik yang menjadi aset paling berharga toko online Anda.",
+      },
+      cta(
+        "Kreativita Sinergi membangun toko online yang profesional dan aman untuk menumbuhkan kepercayaan pembeli. Konsultasi gratis untuk memulai."
+      ),
+    ],
+  },
+  {
+    slug: "tren-desain-website-2026",
+    title: "Tren Desain Website 2026 yang Membuat Tampilan Tetap Segar",
+    description:
+      "Rangkuman tren desain website 2026 — dari minimalis, mode gelap, hingga mikrointeraksi, dan cara menerapkannya dengan bijak.",
+    excerpt:
+      "Ingin website terlihat modern dan tidak ketinggalan zaman? Kenali tren desain website 2026 dan terapkan dengan bijak.",
+    date: "2025-04-12",
+    category: "Desain",
+    readingTime: "4 menit",
+    keywords: ["tren desain website 2026", "tren web design", "desain website modern", "tren UI 2026"],
+    content: [
+      {
+        type: "p",
+        text: "Desain website terus berkembang mengikuti selera dan teknologi. Mengikuti tren membantu website Anda terlihat segar dan profesional — selama diterapkan dengan tujuan, bukan sekadar ikut-ikutan.",
+      },
+      { type: "h2", text: "Tren yang Menonjol" },
+      {
+        type: "ul",
+        items: [
+          "Desain bersih dan minimalis yang fokus pada konten.",
+          "Mode gelap sebagai pilihan kenyamanan.",
+          "Mikrointeraksi dan animasi halus yang menghidupkan.",
+          "Tipografi besar dan berani sebagai daya tarik.",
+          "Performa cepat sebagai bagian dari pengalaman.",
+        ],
+      },
+      { type: "h2", text: "Tren Mengikuti Fungsi" },
+      {
+        type: "p",
+        text: "Tren terbaik adalah yang mendukung pengalaman pengguna, bukan menghambatnya. Terapkan yang relevan dengan brand dan audiens Anda, dan pastikan tetap cepat serta mudah digunakan.",
+      },
+      cta(
+        "Kreativita Sinergi merancang website modern yang mengikuti praktik terbaik terkini tanpa mengorbankan kecepatan. Konsultasi gratis untuk tampilan yang segar."
+      ),
+    ],
+  },
+  {
+    slug: "cara-membuat-website-event",
+    title: "Cara Membuat Website Event yang Memudahkan Pendaftaran Peserta",
+    description:
+      "Panduan membuat website event atau acara — informasi, jadwal, pendaftaran, hingga tiket, agar peserta mudah ikut dan acara lebih sukses.",
+    excerpt:
+      "Mau mengadakan acara, seminar, atau workshop? Website event memudahkan promosi dan pendaftaran peserta.",
+    date: "2025-04-05",
+    category: "Website",
+    readingTime: "4 menit",
+    keywords: ["website event", "website acara", "pendaftaran event online", "website seminar"],
+    content: [
+      {
+        type: "p",
+        text: "Mengadakan acara — seminar, workshop, atau konser — butuh cara mudah memberi informasi dan menerima pendaftaran. Website event menyatukan semuanya dalam satu tempat profesional, jauh lebih rapi dibanding sekadar pamflet di media sosial.",
+      },
+      { type: "h2", text: "Fitur Website Event" },
+      {
+        type: "ul",
+        items: [
+          "Informasi acara, jadwal, dan pembicara.",
+          "Lokasi dengan peta atau tautan acara online.",
+          "Formulir pendaftaran peserta.",
+          "Pembelian atau pemesanan tiket.",
+          "Pengingat dan informasi terbaru.",
+        ],
+      },
+      { type: "h2", text: "Profesional Sejak Promosi" },
+      {
+        type: "p",
+        text: "Website yang rapi membuat acara Anda terlihat kredibel dan memudahkan calon peserta memutuskan ikut. Data pendaftar yang terkumpul juga membantu Anda mengelola acara dengan lebih baik.",
+      },
+      cta(
+        "Kreativita Sinergi membangun website event dengan pendaftaran dan tiket sesuai kebutuhan acara Anda. Konsultasi gratis untuk menyukseskan acara."
       ),
     ],
   },

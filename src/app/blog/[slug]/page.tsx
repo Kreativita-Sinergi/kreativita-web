@@ -51,6 +51,30 @@ function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
 }
 
+// Parser inline ringan: dukung [label](url) dan **bold** di dalam teks.
+function renderInline(text: string): React.ReactNode[] {
+  const tokens = text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g);
+  return tokens.map((tok, i) => {
+    const link = tok.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (link) {
+      return (
+        <a
+          key={i}
+          href={link[2]}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          className="text-brand-600 underline underline-offset-2 hover:text-brand-700"
+        >
+          {link[1]}
+        </a>
+      );
+    }
+    const bold = tok.match(/^\*\*([^*]+)\*\*$/);
+    if (bold) return <strong key={i} className="font-semibold text-slate-900">{bold[1]}</strong>;
+    return tok;
+  });
+}
+
 function renderBlock(block: Block, i: number) {
   switch (block.type) {
     case "h2":
@@ -65,7 +89,7 @@ function renderBlock(block: Block, i: number) {
           {block.items.map((item) => (
             <li key={item} className="flex items-start gap-3 text-slate-700">
               <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-500 shrink-0" />
-              <span>{item}</span>
+              <span>{renderInline(item)}</span>
             </li>
           ))}
         </ul>
@@ -73,7 +97,7 @@ function renderBlock(block: Block, i: number) {
     default:
       return (
         <p key={i} className="my-4 text-slate-700 leading-relaxed">
-          {block.text}
+          {renderInline(block.text)}
         </p>
       );
   }
@@ -146,6 +170,30 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </header>
 
           <div className="text-[17px]">{post.content.map(renderBlock)}</div>
+
+          {/* Sumber & Referensi */}
+          {post.sources && post.sources.length > 0 && (
+            <div className="mt-12 rounded-2xl border border-slate-100 bg-slate-50 p-6">
+              <h2 className="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">
+                Sumber &amp; Referensi
+              </h2>
+              <ul className="space-y-2 text-sm">
+                {post.sources.map((s) => (
+                  <li key={s.url} className="flex items-start gap-2">
+                    <span className="text-slate-400 mt-0.5">↗</span>
+                    <a
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-brand-600 hover:text-brand-700 hover:underline break-words"
+                    >
+                      {s.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* CTA */}
           <div className="mt-12 rounded-2xl bg-gradient-to-br from-brand-600 to-indigo-700 text-white p-7 text-center">
