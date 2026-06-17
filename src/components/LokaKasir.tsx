@@ -9,7 +9,7 @@ export default function LokaKasir() {
         className="absolute inset-0 opacity-20"
         style={{
           background:
-            "radial-gradient(600px 300px at 90% 10%, #3366ff, transparent), radial-gradient(500px 300px at 0% 90%, #7c3aed, transparent)",
+            "radial-gradient(600px 300px at 90% 10%, #3366ff, transparent), radial-gradient(500px 300px at 0% 90%, #4f46e5, transparent)",
         }}
       />
       <div className="max-w-7xl mx-auto px-5 lg:px-8 relative grid lg:grid-cols-2 gap-14 items-center">
@@ -22,7 +22,7 @@ export default function LokaKasir() {
           <ul className="mt-7 space-y-3 text-sm">
             {lokaKasir.features.map((f) => (
               <li key={f} className="flex items-start gap-3">
-                <span className="text-green-400 mt-0.5">✓</span> {f}
+                <span className="text-brand-300 mt-0.5">✓</span> {f}
               </li>
             ))}
           </ul>
@@ -49,15 +49,15 @@ export default function LokaKasir() {
             <div className="rounded-2xl bg-white text-slate-800 p-5 shadow-2xl">
               <div className="flex items-center justify-between mb-4">
                 <span className="font-bold">Kasir</span>
-                <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-semibold">
+                <span className="text-xs bg-brand-100 text-brand-700 px-2 py-1 rounded-full font-semibold">
                   ● Online
                 </span>
               </div>
               <div className="grid grid-cols-3 gap-2 mb-4">
                 {[
                   { name: "Kopi", c: "bg-brand-100" },
-                  { name: "Roti", c: "bg-accent/20" },
-                  { name: "Teh", c: "bg-purple-100" },
+                  { name: "Roti", c: "bg-sky-100" },
+                  { name: "Teh", c: "bg-indigo-100" },
                 ].map((p) => (
                   <div key={p.name} className="rounded-xl border border-slate-100 p-2 text-center">
                     <div className={`h-10 rounded-lg mb-1 ${p.c}`} />

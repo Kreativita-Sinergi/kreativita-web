@@ -14,7 +14,7 @@ export default function Process() {
         <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* connecting line behind the step badges (desktop only) */}
           <div
-            className="hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-brand-300 via-purple-300 to-green-300"
+            className="hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-brand-200 via-indigo-200 to-brand-200"
             aria-hidden
           />
           {processSteps.map((s, i) => (

@@ -121,7 +121,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </section>
 
           {/* CTA */}
-          <div className="rounded-3xl bg-gradient-to-br from-brand-600 to-purple-700 text-white p-8 lg:p-12 text-center">
+          <div className="rounded-3xl bg-gradient-to-br from-brand-600 to-indigo-700 text-white p-8 lg:p-12 text-center">
             <h2 className="text-2xl lg:text-3xl font-extrabold tracking-tight">
               Siap mulai {service.title.toLowerCase()}?
             </h2>

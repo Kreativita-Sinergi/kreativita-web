@@ -9,18 +9,18 @@ export const processSteps = [
     step: "2",
     title: "Penawaran",
     description: "Kami susun rencana, fitur, timeline, dan harga yang jelas.",
-    color: "bg-purple-600",
+    color: "bg-indigo-600",
   },
   {
     step: "3",
     title: "Pengerjaan",
     description: "Tim kami mulai membangun dengan update progres berkala.",
-    color: "bg-accent",
+    color: "bg-sky-600",
   },
   {
     step: "4",
     title: "Peluncuran",
     description: "Aplikasi siap dipakai + dukungan & maintenance setelahnya.",
-    color: "bg-green-600",
+    color: "bg-brand-700",
   },
 ];

@@ -12,9 +12,9 @@ export const about = {
   ],
   highlights: [
     { value: "2024", label: "Berdiri & terus bertumbuh", color: "bg-brand-50 text-brand-600" },
-    { value: "Tim", label: "Developer & desainer berpengalaman", color: "bg-purple-50 text-purple-600" },
-    { value: "Hemat", label: "Harga ramah untuk UMKM", color: "bg-accent/10 text-accent" },
-    { value: "Loka Kasir", label: "Produk POS buatan sendiri", color: "bg-green-50 text-green-600" },
+    { value: "Tim", label: "Developer & desainer berpengalaman", color: "bg-indigo-50 text-indigo-600" },
+    { value: "Hemat", label: "Harga ramah untuk UMKM", color: "bg-sky-50 text-sky-600" },
+    { value: "Loka Kasir", label: "Produk POS buatan sendiri", color: "bg-slate-100 text-slate-600" },
   ],
 };
 

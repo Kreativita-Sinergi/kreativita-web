@@ -126,7 +126,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <div className="text-[17px]">{post.content.map(renderBlock)}</div>
 
           {/* CTA */}
-          <div className="mt-12 rounded-2xl bg-gradient-to-br from-brand-600 to-purple-700 text-white p-7 text-center">
+          <div className="mt-12 rounded-2xl bg-gradient-to-br from-brand-600 to-indigo-700 text-white p-7 text-center">
             <h3 className="text-xl font-bold">Punya proyek digital?</h3>
             <p className="mt-2 text-white/90 text-sm">
               Konsultasi gratis dengan tim Kreativita Sinergi — tanpa biaya, balasan cepat.

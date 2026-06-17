@@ -17,9 +17,6 @@
   --color-brand-900: #1e308f;
   --color-brand-950: #161e57;
 
-  /* Aksen (oranye) */
-  --color-accent: #ff7a45;
-
   --font-sans: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
@@ -35,15 +32,15 @@ body {
 }
 
 .grad-text {
-  background: linear-gradient(90deg, #3366ff, #7c3aed, #ff7a45);
+  background: linear-gradient(90deg, #3366ff, #1f47f5);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Brand-colored gradient inspired by the hexagon logo (blue→red→yellow→green) */
+/* Brand gradient — single blue family (kohesif, bukan warna-warni) */
 .grad-brand {
-  background: linear-gradient(95deg, #3366ff, #ef4444 38%, #f5c518 68%, #16a34a);
+  background: linear-gradient(95deg, #3366ff, #1f47f5 60%, #4f46e5);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -51,9 +48,8 @@ body {
 
 .grad-hero {
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(51, 102, 255, 0.18), transparent 60%),
-    radial-gradient(900px 500px at 0% 20%, rgba(124, 58, 237, 0.14), transparent 55%),
-    radial-gradient(700px 500px at 95% 90%, rgba(245, 197, 24, 0.1), transparent 55%);
+    radial-gradient(1200px 600px at 80% -10%, rgba(51, 102, 255, 0.16), transparent 60%),
+    radial-gradient(900px 500px at 0% 20%, rgba(31, 71, 245, 0.1), transparent 55%);
 }
 
 /* Subtle dotted grid backdrop */
@@ -83,8 +79,9 @@ body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
+  pointer-events: none;
   padding: 1.5px;
-  background: linear-gradient(135deg, #3366ff, #7c3aed, #ff7a45);
+  background: linear-gradient(135deg, #3366ff, #4f46e5);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;

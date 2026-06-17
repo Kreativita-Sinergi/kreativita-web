@@ -53,7 +53,7 @@ export const services: Service[] = [
     description:
       "Aplikasi Android & iOS dengan Flutter — satu kode, dua platform. Performa native, biaya lebih hemat.",
     icon: "phone",
-    color: "bg-purple-50 text-purple-600",
+    color: "bg-indigo-50 text-indigo-600",
     seoTitle: "Jasa Pembuatan Aplikasi Mobile Android & iOS",
     seoDescription:
       "Jasa pembuatan aplikasi mobile Android & iOS dengan Flutter — satu basis kode untuk dua platform, performa native, biaya lebih hemat. Dari MVP hingga aplikasi skala penuh.",
@@ -86,7 +86,7 @@ export const services: Service[] = [
     description:
       "Backend, dashboard admin, integrasi pembayaran, dan sistem internal sesuai alur bisnis Anda.",
     icon: "code",
-    color: "bg-accent/10 text-accent",
+    color: "bg-sky-50 text-sky-600",
     seoTitle: "Jasa Pembuatan Sistem Custom & Integrasi API",
     seoDescription:
       "Jasa pembuatan sistem custom: backend, dashboard admin, integrasi payment gateway dan API pihak ketiga, sesuai alur bisnis Anda. Skalabel, aman, dan andal.",
@@ -119,7 +119,7 @@ export const services: Service[] = [
     description:
       "Desain antarmuka yang menarik dan mudah digunakan, dirancang dari riset pengguna hingga prototype.",
     icon: "shield",
-    color: "bg-green-50 text-green-600",
+    color: "bg-slate-100 text-slate-600",
     seoTitle: "Jasa UI/UX Design — Desain Antarmuka & Prototype",
     seoDescription:
       "Jasa UI/UX design untuk website dan aplikasi — dari riset pengguna, wireframe, hingga prototype interaktif. Desain yang menarik, konsisten, dan mudah digunakan.",
@@ -152,7 +152,7 @@ export const services: Service[] = [
     description:
       "Deploy, domain, keamanan, dan perawatan rutin agar aplikasi Anda selalu online dan up-to-date.",
     icon: "server",
-    color: "bg-pink-50 text-pink-600",
+    color: "bg-brand-50 text-brand-600",
     seoTitle: "Jasa Hosting & Maintenance Website/Aplikasi",
     seoDescription:
       "Jasa hosting, deployment, dan maintenance website serta aplikasi — keamanan, backup, pembaruan, dan monitoring agar layanan Anda selalu online dan optimal.",
@@ -185,7 +185,7 @@ export const services: Service[] = [
     description:
       "Bingung mulai dari mana? Kami bantu petakan kebutuhan teknologi dan strategi digitalisasi bisnis Anda.",
     icon: "bolt",
-    color: "bg-yellow-50 text-yellow-600",
+    color: "bg-indigo-50 text-indigo-600",
     seoTitle: "Konsultasi Digital & Strategi Teknologi Bisnis",
     seoDescription:
       "Konsultasi digital untuk membantu memetakan kebutuhan teknologi dan menyusun strategi transformasi digital bisnis Anda — terarah, realistis, dan sesuai anggaran.",
