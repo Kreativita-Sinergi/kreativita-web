@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { faqs } from "@/data/faq";
+import Reveal from "./Reveal";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -9,7 +10,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-20 lg:py-28">
       <div className="max-w-3xl mx-auto px-5 lg:px-8">
-        <div className="text-center mb-14">
+        <Reveal className="text-center mb-14">
           <span className="text-brand-600 font-semibold text-sm">FAQ</span>
           <h2 className="mt-3 text-3xl lg:text-4xl font-extrabold tracking-tight">
             Pertanyaan yang Sering Ditanyakan
@@ -17,13 +18,16 @@ export default function FAQ() {
           <p className="mt-4 text-slate-600">
             Belum terjawab? Langsung tanya tim kami lewat WhatsApp atau email.
           </p>
-        </div>
+        </Reveal>
 
         <div className="space-y-4">
           {faqs.map((item, i) => {
             const open = openIndex === i;
             return (
-              <div key={item.q} className="rounded-2xl border border-slate-200 bg-white overflow-hidden">
+              <div
+                key={item.q}
+                className="rounded-2xl border border-slate-200 bg-white overflow-hidden transition-colors hover:border-brand-200"
+              >
                 <button
                   className="w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-semibold"
                   onClick={() => setOpenIndex(open ? null : i)}

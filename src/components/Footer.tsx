@@ -10,9 +10,12 @@ export default function Footer() {
     <footer className="border-t border-slate-100 py-12">
       <div className="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-4 gap-8">
         <div className="md:col-span-2">
-          <a href="#home" className="flex items-center gap-2 font-extrabold text-xl mb-3">
+          <a href="#home" className="flex items-center gap-2.5 text-xl tracking-tight mb-3">
             <Image src="/logo-icon.png" alt="Kreativita Sinergi" width={36} height={36} className="w-9 h-9" />
-            Kreativita
+            <span className="leading-none">
+              <span className="font-extrabold text-slate-900">KREATIVITA</span>{" "}
+              <span className="font-medium text-slate-500">SINERGI</span>
+            </span>
           </a>
           <p className="text-sm text-slate-600 max-w-sm">
             Partner teknologi untuk bisnis Anda — membangun website, aplikasi, dan solusi IT dengan harga
@@ -37,7 +40,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-5 lg:px-8 mt-10 pt-6 border-t border-slate-100 text-center text-sm text-slate-500">
-        © {year} Kreativita. Semua hak dilindungi.
+        © {year} Kreativita Sinergi. Bersinergi membangun inovasi digital.
       </div>
     </footer>
   );

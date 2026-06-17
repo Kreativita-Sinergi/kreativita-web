@@ -1,11 +1,12 @@
 import { plans } from "@/data/pricing";
 import { waLink } from "@/lib/contact";
+import Reveal from "./Reveal";
 
 export default function Pricing() {
   return (
     <section id="harga" className="py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
-        <div className="max-w-2xl mx-auto text-center mb-16">
+        <Reveal className="max-w-2xl mx-auto text-center mb-16">
           <span className="text-brand-600 font-semibold text-sm">HARGA TERJANGKAU</span>
           <h2 className="mt-3 text-3xl lg:text-4xl font-extrabold tracking-tight">
             Paket Sesuai Kebutuhan &amp; Budget
@@ -13,15 +14,16 @@ export default function Pricing() {
           <p className="mt-4 text-slate-600">
             Harga transparan tanpa biaya tersembunyi. Bisa juga custom sesuai kebutuhan Anda.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {plans.map((plan) => (
-            <div
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
+          {plans.map((plan, i) => (
+            <Reveal
               key={plan.name}
-              className={`rounded-2xl bg-white p-8 flex flex-col relative ${
+              delay={i * 100}
+              className={`rounded-2xl bg-white p-8 flex flex-col relative transition-transform hover:-translate-y-1 ${
                 plan.popular
-                  ? "border-2 border-brand-600 shadow-xl shadow-brand-500/10"
+                  ? "border-2 border-brand-600 shadow-xl shadow-brand-500/10 md:scale-[1.03]"
                   : "border border-slate-200"
               }`}
             >
@@ -55,7 +57,7 @@ export default function Pricing() {
               >
                 {plan.cta}
               </a>
-            </div>
+            </Reveal>
           ))}
         </div>
         <p className="text-center text-sm text-slate-500 mt-8">

@@ -1,6 +1,7 @@
 import { siteDetails } from "@/data/siteDetails";
 import { waLink, mailLink } from "@/lib/contact";
 import { WhatsAppIcon, MailIcon } from "./icons";
+import Reveal from "./Reveal";
 
 export default function Contact() {
   const { email, phoneDisplay, location } = siteDetails.contact;
@@ -8,7 +9,7 @@ export default function Contact() {
   return (
     <section id="kontak" className="py-20 lg:py-28 bg-slate-50">
       <div className="max-w-5xl mx-auto px-5 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-br from-brand-600 to-purple-700 text-white p-8 lg:p-14 text-center relative overflow-hidden">
+        <Reveal className="rounded-3xl bg-gradient-to-br from-brand-600 to-purple-700 text-white p-8 lg:p-14 text-center relative overflow-hidden">
           <div
             className="absolute inset-0 opacity-30"
             style={{ background: "radial-gradient(400px 200px at 20% 0%, #ffffff4d, transparent)" }}
@@ -47,7 +48,7 @@ export default function Contact() {
               <span>📍 {location}</span>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

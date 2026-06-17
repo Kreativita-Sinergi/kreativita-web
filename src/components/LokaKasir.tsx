@@ -1,5 +1,6 @@
 import { lokaKasir } from "@/data/lokaKasir";
 import { waLink } from "@/lib/contact";
+import Reveal from "./Reveal";
 
 export default function LokaKasir() {
   return (
@@ -12,7 +13,7 @@ export default function LokaKasir() {
         }}
       />
       <div className="max-w-7xl mx-auto px-5 lg:px-8 relative grid lg:grid-cols-2 gap-14 items-center">
-        <div>
+        <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 text-white text-xs font-semibold px-3 py-1.5 mb-5">
             {lokaKasir.eyebrow}
           </span>
@@ -41,9 +42,9 @@ export default function LokaKasir() {
               Tanya Tim
             </a>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="relative">
+        <Reveal delay={150} className="relative">
           <div className="rounded-3xl bg-white/5 border border-white/10 p-6 backdrop-blur">
             <div className="rounded-2xl bg-white text-slate-800 p-5 shadow-2xl">
               <div className="flex items-center justify-between mb-4">
@@ -75,7 +76,7 @@ export default function LokaKasir() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
