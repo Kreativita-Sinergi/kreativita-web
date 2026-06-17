@@ -12,7 +12,7 @@ export const plans: Plan[] = [
   {
     name: "Starter",
     subtitle: "Untuk UMKM & personal",
-    price: "Rp 1,5jt",
+    price: "Mulai Rp 500rb",
     priceNote: "/proyek",
     features: [
       "Landing page 1 halaman",
