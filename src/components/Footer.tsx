@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteDetails } from "@/data/siteDetails";
 import { waLink, mailLink } from "@/lib/contact";
 
@@ -10,9 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-4 gap-8">
         <div className="md:col-span-2">
           <a href="#home" className="flex items-center gap-2 font-extrabold text-xl mb-3">
-            <span className="grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-white">
-              K
-            </span>
+            <Image src="/logo-icon.png" alt="Kreativita Sinergi" width={36} height={36} className="w-9 h-9" />
             Kreativita
           </a>
           <p className="text-sm text-slate-600 max-w-sm">

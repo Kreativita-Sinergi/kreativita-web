@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { navItems } from "@/data/navigation";
 
 export default function Navbar() {
@@ -10,11 +11,12 @@ export default function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50">
       <div className="bg-white/80 backdrop-blur-md border-b border-slate-100">
         <nav className="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-2 font-extrabold text-xl">
-            <span className="grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-white">
-              K
+          <a href="#home" className="flex items-center gap-2.5 text-lg sm:text-xl tracking-tight">
+            <Image src="/logo-icon.png" alt="Kreativita Sinergi" width={36} height={36} className="w-9 h-9" priority />
+            <span className="leading-none">
+              <span className="font-extrabold text-slate-900">KREATIVITA</span>{" "}
+              <span className="font-medium text-slate-600">SINERGI</span>
             </span>
-            <span>Kreativita</span>
           </a>
 
           <ul className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
