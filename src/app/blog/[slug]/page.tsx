@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { posts, getPost, type Block } from "@/data/blog";
+import Breadcrumb from "@/components/Breadcrumb";
+import { posts, getPost, getRelatedPosts, categorySlug, type Block } from "@/data/blog";
 import { siteDetails } from "@/data/siteDetails";
 import { waLink } from "@/lib/contact";
 
@@ -21,6 +23,7 @@ export async function generateMetadata({
   const post = getPost(slug);
   if (!post) return {};
   const url = `${siteDetails.siteUrl}/blog/${post.slug}`;
+  const ogImage = `/blog/og/${post.slug}.png`;
   return {
     title: post.title,
     description: post.description,
@@ -33,11 +36,13 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       authors: [siteDetails.siteName],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      images: [ogImage],
     },
   };
 }
@@ -85,6 +90,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
+    image: `${siteDetails.siteUrl}/blog/og/${post.slug}.png`,
     datePublished: post.date,
     dateModified: post.date,
     inLanguage: siteDetails.locale,
@@ -97,7 +103,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     },
   };
 
-  const related = posts.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const related = getRelatedPosts(post, 3);
 
   return (
     <>
@@ -105,14 +111,22 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       <Navbar />
       <main className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <article className="max-w-2xl mx-auto px-5 lg:px-8">
-          <Link href="/blog" className="text-sm font-semibold text-brand-600 hover:underline">
-            ← Kembali ke Blog
-          </Link>
+          <Breadcrumb
+            items={[
+              { name: "Beranda", href: "/" },
+              { name: "Blog", href: "/blog" },
+              { name: post.category, href: `/blog/kategori/${categorySlug(post.category)}` },
+              { name: post.title },
+            ]}
+          />
 
           <header className="mt-6 mb-8">
-            <span className="inline-flex items-center rounded-full bg-brand-50 text-brand-700 text-xs font-semibold px-3 py-1 mb-4">
+            <Link
+              href={`/blog/kategori/${categorySlug(post.category)}`}
+              className="inline-flex items-center rounded-full bg-brand-50 text-brand-700 text-xs font-semibold px-3 py-1 mb-4 hover:bg-brand-100 transition-colors"
+            >
               {post.category}
-            </span>
+            </Link>
             <h1 className="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
               {post.title}
             </h1>
@@ -121,6 +135,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               <span>•</span>
               <span>{post.readingTime} baca</span>
             </div>
+            <Image
+              src={`/blog/og/${post.slug}.png`}
+              alt={post.title}
+              width={1200}
+              height={630}
+              priority
+              className="mt-8 w-full rounded-2xl border border-slate-100"
+            />
           </header>
 
           <div className="text-[17px]">{post.content.map(renderBlock)}</div>
@@ -144,8 +166,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           {/* Related */}
           {related.length > 0 && (
             <div className="mt-14">
-              <h3 className="text-lg font-bold mb-5">Artikel Lainnya</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <h3 className="text-lg font-bold mb-5">Artikel Terkait</h3>
+              <div className="grid sm:grid-cols-3 gap-4">
                 {related.map((r) => (
                   <Link
                     key={r.slug}

@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { ServiceIcon } from "@/components/icons";
+import Breadcrumb from "@/components/Breadcrumb";
 import { services, getService } from "@/data/services";
 import { siteDetails } from "@/data/siteDetails";
 import { waLink } from "@/lib/contact";
@@ -63,9 +64,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <Navbar />
       <main className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-4xl mx-auto px-5 lg:px-8">
-          <Link href="/#layanan" className="text-sm font-semibold text-brand-600 hover:underline">
-            ← Semua Layanan
-          </Link>
+          <Breadcrumb
+            items={[
+              { name: "Beranda", href: "/" },
+              { name: "Layanan", href: "/#layanan" },
+              { name: service.title },
+            ]}
+          />
 
           {/* Hero */}
           <header className="mt-6 mb-12">
