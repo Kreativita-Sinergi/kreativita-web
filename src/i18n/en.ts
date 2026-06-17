@@ -253,7 +253,7 @@ export const en: Dictionary = {
       {
         name: "Starter",
         subtitle: "For SMEs & individuals",
-        price: "IDR 1.5M",
+        price: "From IDR 500K",
         priceNote: "/project",
         popular: false,
         features: ["1-page landing page", "Responsive design (mobile & desktop)", "Contact form & WhatsApp", "2 free revisions"],

@@ -250,7 +250,7 @@ export const id = {
       {
         name: "Starter",
         subtitle: "Untuk UMKM & personal",
-        price: "Rp 1,5jt",
+        price: "Mulai Rp 500rb",
         priceNote: "/proyek",
         popular: false,
         features: ["Landing page 1 halaman", "Desain responsif (HP & desktop)", "Form kontak & WhatsApp", "Gratis revisi 2x"],
