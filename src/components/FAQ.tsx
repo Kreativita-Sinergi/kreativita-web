@@ -1,27 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import { faqs } from "@/data/faq";
+import { getDictionary } from "@/i18n";
+import type { Locale } from "@/i18n/config";
 import Reveal from "./Reveal";
 
-export default function FAQ() {
+export default function FAQ({ lang }: { lang: Locale }) {
+  const t = getDictionary(lang).faq;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section id="faq" className="py-20 lg:py-28">
       <div className="max-w-3xl mx-auto px-5 lg:px-8">
         <Reveal className="text-center mb-14">
-          <span className="text-brand-600 font-semibold text-sm">FAQ</span>
-          <h2 className="mt-3 text-3xl lg:text-4xl font-extrabold tracking-tight">
-            Pertanyaan yang Sering Ditanyakan
-          </h2>
-          <p className="mt-4 text-slate-600">
-            Belum terjawab? Langsung tanya tim kami lewat WhatsApp atau email.
-          </p>
+          <span className="text-brand-600 font-semibold text-sm">{t.eyebrow}</span>
+          <h2 className="mt-3 text-3xl lg:text-4xl font-extrabold tracking-tight">{t.title}</h2>
+          <p className="mt-4 text-slate-600">{t.desc}</p>
         </Reveal>
 
         <div className="space-y-4">
-          {faqs.map((item, i) => {
+          {t.items.map((item, i) => {
             const open = openIndex === i;
             return (
               <div
@@ -44,9 +42,7 @@ export default function FAQ() {
                     <path strokeLinecap="round" d="M6 9l6 6 6-6" />
                   </svg>
                 </button>
-                {open && (
-                  <div className="px-6 pb-5 text-sm text-slate-600 leading-relaxed">{item.a}</div>
-                )}
+                {open && <div className="px-6 pb-5 text-sm text-slate-600 leading-relaxed">{item.a}</div>}
               </div>
             );
           })}

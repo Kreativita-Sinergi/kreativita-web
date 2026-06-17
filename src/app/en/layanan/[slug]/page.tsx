@@ -4,7 +4,7 @@ import { getServices, getService } from "@/i18n";
 import { siteDetails } from "@/data/siteDetails";
 
 export function generateStaticParams() {
-  return getServices("id").map((s) => ({ slug: s.slug }));
+  return getServices("en").map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
@@ -13,14 +13,14 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const service = getService("id", slug);
+  const service = getService("en", slug);
   if (!service) return {};
   return {
     title: service.seoTitle,
     description: service.seoDescription,
     keywords: service.keywords,
     alternates: {
-      canonical: `/layanan/${service.slug}`,
+      canonical: `/en/layanan/${service.slug}`,
       languages: {
         id: `/layanan/${service.slug}`,
         en: `/en/layanan/${service.slug}`,
@@ -30,14 +30,14 @@ export async function generateMetadata({
     openGraph: {
       title: service.seoTitle,
       description: service.seoDescription,
-      url: `${siteDetails.siteUrl}/layanan/${service.slug}`,
+      url: `${siteDetails.siteUrl}/en/layanan/${service.slug}`,
       type: "website",
-      locale: "id_ID",
+      locale: "en_US",
     },
   };
 }
 
-export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ServicePageEn({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  return <ServiceDetail lang="id" slug={slug} />;
+  return <ServiceDetail lang="en" slug={slug} />;
 }

@@ -48,7 +48,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ cat: 
 
   return (
     <>
-      <Navbar />
+      <Navbar lang="id" />
       <main className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-5 lg:px-8">
           <Breadcrumb
@@ -97,7 +97,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ cat: 
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer lang="id" />
       <FloatingWhatsApp />
     </>
   );

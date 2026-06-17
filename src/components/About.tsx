@@ -1,7 +1,9 @@
-import { about } from "@/data/about";
+import { getDictionary } from "@/i18n";
+import type { Locale } from "@/i18n/config";
 import Reveal from "./Reveal";
 
-export default function About() {
+export default function About({ lang }: { lang: Locale }) {
+  const about = getDictionary(lang).about;
   return (
     <section id="tentang" className="py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">

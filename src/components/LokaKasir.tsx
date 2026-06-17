@@ -1,8 +1,11 @@
-import { lokaKasir } from "@/data/lokaKasir";
+import { getDictionary } from "@/i18n";
+import { localizedHref, type Locale } from "@/i18n/config";
 import { waLink } from "@/lib/contact";
 import Reveal from "./Reveal";
 
-export default function LokaKasir() {
+export default function LokaKasir({ lang }: { lang: Locale }) {
+  const t = getDictionary(lang).lokaKasir;
+  const tileColors = ["bg-brand-100", "bg-sky-100", "bg-indigo-100"];
   return (
     <section id="produk" className="py-20 lg:py-28 bg-slate-900 text-white relative overflow-hidden">
       <div
@@ -15,12 +18,12 @@ export default function LokaKasir() {
       <div className="max-w-7xl mx-auto px-5 lg:px-8 relative grid lg:grid-cols-2 gap-14 items-center">
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 text-white text-xs font-semibold px-3 py-1.5 mb-5">
-            {lokaKasir.eyebrow}
+            {t.eyebrow}
           </span>
-          <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight">{lokaKasir.title}</h2>
-          <p className="mt-5 text-slate-300 leading-relaxed">{lokaKasir.description}</p>
+          <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight">{t.title}</h2>
+          <p className="mt-5 text-slate-300 leading-relaxed">{t.description}</p>
           <ul className="mt-7 space-y-3 text-sm">
-            {lokaKasir.features.map((f) => (
+            {t.features.map((f) => (
               <li key={f} className="flex items-start gap-3">
                 <span className="text-brand-300 mt-0.5">✓</span> {f}
               </li>
@@ -33,18 +36,16 @@ export default function LokaKasir() {
               rel="noopener"
               className="inline-flex items-center gap-2 rounded-full bg-white text-slate-900 font-semibold px-6 py-3 hover:bg-slate-100 transition"
             >
-              Coba Loka Kasir
+              {t.ctaTry}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H8M17 7v9" />
               </svg>
             </a>
             <a
-              href={waLink("Halo Kreativita, saya tertarik dengan Loka Kasir.")}
-              target="_blank"
-              rel="noopener"
+              href={localizedHref(lang, "/#kontak")}
               className="inline-flex items-center gap-2 rounded-full border border-white/30 text-white font-semibold px-6 py-3 hover:bg-white/10 transition"
             >
-              Tanya Tim
+              {t.ctaAsk}
             </a>
           </div>
         </Reveal>
@@ -55,28 +56,24 @@ export default function LokaKasir() {
               <div className="flex items-center justify-between mb-4">
                 <span className="font-bold">Kasir</span>
                 <span className="text-xs bg-brand-100 text-brand-700 px-2 py-1 rounded-full font-semibold">
-                  ● Online
+                  {t.online}
                 </span>
               </div>
               <div className="grid grid-cols-3 gap-2 mb-4">
-                {[
-                  { name: "Kopi", c: "bg-brand-100" },
-                  { name: "Roti", c: "bg-sky-100" },
-                  { name: "Teh", c: "bg-indigo-100" },
-                ].map((p) => (
-                  <div key={p.name} className="rounded-xl border border-slate-100 p-2 text-center">
-                    <div className={`h-10 rounded-lg mb-1 ${p.c}`} />
-                    <span className="text-[10px]">{p.name}</span>
+                {t.products.map((name, i) => (
+                  <div key={name} className="rounded-xl border border-slate-100 p-2 text-center">
+                    <div className={`h-10 rounded-lg mb-1 ${tileColors[i % tileColors.length]}`} />
+                    <span className="text-[10px]">{name}</span>
                   </div>
                 ))}
               </div>
               <div className="flex items-center justify-between border-t border-slate-100 pt-3">
                 <div>
-                  <div className="text-xs text-slate-400">Total</div>
+                  <div className="text-xs text-slate-400">{t.total}</div>
                   <div className="font-extrabold text-lg">Rp 48.000</div>
                 </div>
                 <button className="rounded-xl bg-brand-600 text-white text-sm font-semibold px-4 py-2">
-                  Bayar
+                  {t.pay}
                 </button>
               </div>
             </div>

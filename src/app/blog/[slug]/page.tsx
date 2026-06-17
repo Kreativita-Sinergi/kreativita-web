@@ -136,7 +136,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Navbar />
+      <Navbar lang="id" />
       <main className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <article className="max-w-2xl mx-auto px-5 lg:px-8">
           <Breadcrumb
@@ -235,7 +235,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           )}
         </article>
       </main>
-      <Footer />
+      <Footer lang="id" />
       <FloatingWhatsApp />
     </>
   );

@@ -1,9 +1,12 @@
 import { siteDetails } from "@/data/siteDetails";
 import { waLink, mailLink } from "@/lib/contact";
+import { getDictionary } from "@/i18n";
+import type { Locale } from "@/i18n/config";
 import { WhatsAppIcon, MailIcon } from "./icons";
 import Reveal from "./Reveal";
 
-export default function Contact() {
+export default function Contact({ lang }: { lang: Locale }) {
+  const t = getDictionary(lang).contact;
   const { email, phoneDisplay, location } = siteDetails.contact;
 
   return (
@@ -15,30 +18,25 @@ export default function Contact() {
             style={{ background: "radial-gradient(400px 200px at 20% 0%, #ffffff4d, transparent)" }}
           />
           <div className="relative">
-            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight">
-              Punya Ide? Mari Wujudkan Bersama!
-            </h2>
-            <p className="mt-4 text-white/90 max-w-xl mx-auto">
-              Hubungi tim Kreativita sekarang. Konsultasi gratis tanpa biaya, balasan cepat melalui
-              WhatsApp atau email.
-            </p>
+            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight">{t.title}</h2>
+            <p className="mt-4 text-white/90 max-w-xl mx-auto">{t.desc}</p>
 
             <div className="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={waLink("Halo Kreativita, saya ingin konsultasi pembuatan aplikasi/website.")}
+                href={waLink(t.waMessage)}
                 target="_blank"
                 rel="noopener"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 transition"
               >
                 <WhatsAppIcon className="w-6 h-6" />
-                Chat via WhatsApp
+                {t.whatsapp}
               </a>
               <a
                 href={mailLink()}
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-bold px-8 py-4 transition"
               >
                 <MailIcon className="w-6 h-6" />
-                Kirim Email
+                {t.email}
               </a>
             </div>
 

@@ -1,0 +1,338 @@
+// Kamus bahasa Indonesia (default). Struktur ini menjadi acuan tipe untuk en.ts.
+export const id = {
+  meta: {
+    title: "Kreativita Sinergi — Jasa Pembuatan Website & Aplikasi untuk Bisnis",
+    description:
+      "Kreativita Sinergi adalah jasa pembuatan website, aplikasi mobile (Android & iOS), dan solusi IT custom untuk UMKM hingga perusahaan — harga terjangkau, kualitas profesional. Pengembang Loka Kasir, aplikasi POS untuk UMKM.",
+  },
+  nav: {
+    items: [
+      { href: "/#tentang", label: "Tentang" },
+      { href: "/#layanan", label: "Layanan" },
+      { href: "/#produk", label: "Loka Kasir" },
+      { href: "/#harga", label: "Harga" },
+      { href: "/blog", label: "Blog" },
+      { href: "/#kontak", label: "Kontak" },
+    ],
+    cta: "Konsultasi Gratis",
+  },
+  hero: {
+    badge: "Siap bantu wujudkan ide digital Anda",
+    titlePre: "Wujudkan ",
+    titleHighlight: "Website & Aplikasi",
+    titlePost: " Impian Bisnis Anda",
+    desc1:
+      "Kreativita Sinergi adalah partner teknologi yang membantu UMKM hingga perusahaan membangun website, aplikasi mobile, dan semua kebutuhan IT — dengan harga yang ",
+    descEmphasis: "terjangkau",
+    desc2: " dan kualitas profesional.",
+    ctaPrimary: "Mulai Proyek Anda",
+    ctaSecondary: "Lihat Loka Kasir",
+    stats: [
+      { value: "50+", label: "Proyek Selesai" },
+      { value: "100%", label: "Klien Puas" },
+      { value: "24/7", label: "Support" },
+    ],
+    launchTitle: "Launch Sukses",
+    launchSub: "Tepat waktu",
+  },
+  techStack: {
+    label: "Teknologi yang kami gunakan",
+    items: ["Flutter", "React", "Next.js", "Golang", "Node.js", "PostgreSQL", "Figma"],
+  },
+  about: {
+    eyebrow: "TENTANG KAMI",
+    title: "Partner Teknologi yang Tumbuh Bersama Bisnis Anda",
+    paragraphs: [
+      "Kreativita lahir dari satu keyakinan: teknologi berkualitas tidak harus mahal. Kami membantu UMKM, startup, hingga perusahaan mengubah ide menjadi produk digital nyata — mulai dari website, aplikasi mobile, sampai sistem custom.",
+      "Pengalaman kami membangun Loka Kasir, aplikasi kasir yang dipakai pelaku usaha sehari-hari, membuat kami paham betul kebutuhan bisnis di lapangan — bukan sekadar membuat aplikasi, tapi solusi yang benar-benar dipakai.",
+    ],
+    points: [
+      "Komunikasi jelas & transparan dari awal sampai selesai",
+      "Harga jujur, tanpa biaya tersembunyi",
+      "Pendampingan & dukungan setelah aplikasi jadi",
+    ],
+    highlights: [
+      { value: "2024", label: "Berdiri & terus bertumbuh", color: "bg-brand-50 text-brand-600" },
+      { value: "Tim", label: "Developer & desainer berpengalaman", color: "bg-indigo-50 text-indigo-600" },
+      { value: "Hemat", label: "Harga ramah untuk UMKM", color: "bg-sky-50 text-sky-600" },
+      { value: "Loka Kasir", label: "Produk POS buatan sendiri", color: "bg-slate-100 text-slate-600" },
+    ],
+  },
+  services: {
+    eyebrow: "LAYANAN KAMI",
+    title: "Semua Kebutuhan IT dalam Satu Tim",
+    desc: "Dari ide hingga peluncuran, kami menangani seluruh aspek teknologi bisnis Anda.",
+    more: "Selengkapnya",
+    items: [
+      {
+        slug: "pembuatan-website",
+        title: "Pembuatan Website",
+        description:
+          "Company profile, landing page, toko online, hingga web app custom yang cepat, responsif, dan SEO-friendly.",
+        icon: "globe",
+        color: "bg-brand-50 text-brand-600",
+        seoTitle: "Jasa Pembuatan Website Profesional & SEO-Friendly",
+        seoDescription:
+          "Jasa pembuatan website untuk UMKM hingga perusahaan — company profile, landing page, toko online, dan web app custom. Cepat, responsif, SEO-friendly, harga terjangkau.",
+        keywords: ["jasa pembuatan website", "jasa bikin website", "pembuatan website UMKM"],
+        hero: "Website adalah etalase digital bisnis Anda yang buka 24 jam. Kami membangun website yang cepat, tampil rapi di semua perangkat, dan dioptimalkan agar mudah ditemukan di Google.",
+        includes: [
+          "Desain modern & responsif (HP, tablet, desktop)",
+          "Optimasi kecepatan & SEO on-page",
+          "Domain, hosting, dan setup SSL",
+          "Integrasi WhatsApp, form kontak & Google Maps",
+          "Panel kelola konten yang mudah",
+          "Pendampingan & maintenance setelah live",
+        ],
+        benefits: [
+          { title: "Kredibilitas", desc: "Tampil profesional dan tepercaya di mata calon pelanggan." },
+          { title: "Ditemukan di Google", desc: "Struktur SEO-friendly agar bisnis muncul saat dicari." },
+          { title: "Aset milik sendiri", desc: "Berbeda dari media sosial, website sepenuhnya milik Anda." },
+        ],
+      },
+      {
+        slug: "aplikasi-mobile",
+        title: "Aplikasi Mobile",
+        description:
+          "Aplikasi Android & iOS dengan Flutter — satu kode, dua platform. Performa native, biaya lebih hemat.",
+        icon: "phone",
+        color: "bg-indigo-50 text-indigo-600",
+        seoTitle: "Jasa Pembuatan Aplikasi Mobile Android & iOS",
+        seoDescription:
+          "Jasa pembuatan aplikasi mobile Android & iOS dengan Flutter — satu basis kode untuk dua platform, performa native, biaya lebih hemat. Dari MVP hingga aplikasi skala penuh.",
+        keywords: ["jasa pembuatan aplikasi mobile", "jasa bikin aplikasi Android", "developer aplikasi Flutter"],
+        hero: "Jangkau pelanggan langsung dari genggaman mereka. Kami membangun aplikasi Android & iOS dengan Flutter — satu basis kode untuk dua platform, sehingga lebih cepat dan hemat biaya.",
+        includes: [
+          "Aplikasi Android & iOS sekaligus (Flutter)",
+          "Desain UI/UX yang mulus dan intuitif",
+          "Integrasi backend, pembayaran & notifikasi",
+          "Mode offline & sinkronisasi data",
+          "Publikasi ke Play Store / App Store",
+          "Pemeliharaan & pembaruan berkala",
+        ],
+        benefits: [
+          { title: "Hemat Biaya", desc: "Satu kode untuk dua platform memangkas waktu & biaya." },
+          { title: "Mulai dari MVP", desc: "Luncurkan fitur inti dulu, kembangkan bertahap." },
+          { title: "Engagement Tinggi", desc: "Notifikasi push menjaga pelanggan tetap kembali." },
+        ],
+      },
+      {
+        slug: "sistem-custom-api",
+        title: "Sistem Custom & API",
+        description:
+          "Backend, dashboard admin, integrasi pembayaran, dan sistem internal sesuai alur bisnis Anda.",
+        icon: "code",
+        color: "bg-sky-50 text-sky-600",
+        seoTitle: "Jasa Pembuatan Sistem Custom & Integrasi API",
+        seoDescription:
+          "Jasa pembuatan sistem custom: backend, dashboard admin, integrasi payment gateway dan API pihak ketiga, sesuai alur bisnis Anda. Skalabel, aman, dan andal.",
+        keywords: ["jasa pembuatan sistem", "sistem informasi custom", "jasa integrasi API"],
+        hero: "Setiap bisnis punya alur kerja unik. Kami membangun sistem custom — backend, dashboard, hingga integrasi — yang dirancang persis sesuai kebutuhan operasional Anda.",
+        includes: [
+          "Backend & API yang skalabel dan aman",
+          "Dashboard admin sesuai kebutuhan tim",
+          "Integrasi payment gateway & layanan pihak ketiga",
+          "Otomatisasi alur kerja & laporan",
+          "Manajemen hak akses pengguna (role)",
+          "Dokumentasi & dukungan teknis",
+        ],
+        benefits: [
+          { title: "Sesuai Proses Anda", desc: "Sistem mengikuti alur bisnis, bukan sebaliknya." },
+          { title: "Efisiensi", desc: "Otomatisasi tugas manual yang memakan waktu." },
+          { title: "Siap Tumbuh", desc: "Arsitektur yang siap menskalakan saat bisnis membesar." },
+        ],
+      },
+      {
+        slug: "ui-ux-design",
+        title: "UI/UX Design",
+        description:
+          "Desain antarmuka yang menarik dan mudah digunakan, dirancang dari riset pengguna hingga prototype.",
+        icon: "shield",
+        color: "bg-slate-100 text-slate-600",
+        seoTitle: "Jasa UI/UX Design — Desain Antarmuka & Prototype",
+        seoDescription:
+          "Jasa UI/UX design untuk website dan aplikasi — dari riset pengguna, wireframe, hingga prototype interaktif. Desain yang menarik, konsisten, dan mudah digunakan.",
+        keywords: ["jasa UI UX design", "jasa desain aplikasi", "prototype Figma"],
+        hero: "Tampilan yang indah saja tidak cukup — produk harus mudah digunakan. Kami merancang antarmuka yang menarik sekaligus intuitif, mulai dari riset pengguna hingga prototype interaktif.",
+        includes: [
+          "Riset pengguna & analisis kebutuhan",
+          "Wireframe & user flow",
+          "Desain visual & design system",
+          "Prototype interaktif (Figma)",
+          "Uji kegunaan (usability testing)",
+          "Hand-off siap untuk developer",
+        ],
+        benefits: [
+          { title: "Konversi Lebih Tinggi", desc: "Alur yang jelas mendorong pengguna mengambil aksi." },
+          { title: "Konsisten", desc: "Design system menjaga tampilan rapi di semua halaman." },
+          { title: "Hemat Revisi", desc: "Validasi lewat prototype sebelum masuk pengembangan." },
+        ],
+      },
+      {
+        slug: "hosting-maintenance",
+        title: "Hosting & Maintenance",
+        description:
+          "Deploy, domain, keamanan, dan perawatan rutin agar aplikasi Anda selalu online dan up-to-date.",
+        icon: "server",
+        color: "bg-brand-50 text-brand-600",
+        seoTitle: "Jasa Hosting & Maintenance Website/Aplikasi",
+        seoDescription:
+          "Jasa hosting, deployment, dan maintenance website serta aplikasi — keamanan, backup, pembaruan, dan monitoring agar layanan Anda selalu online dan optimal.",
+        keywords: ["jasa hosting website", "jasa maintenance website", "perawatan aplikasi"],
+        hero: "Membangun aplikasi hanyalah awal — menjaganya tetap online dan aman adalah pekerjaan berkelanjutan. Kami urus hosting, keamanan, dan perawatan agar Anda fokus ke bisnis.",
+        includes: [
+          "Setup domain, hosting & SSL",
+          "Deployment & konfigurasi server",
+          "Backup berkala & pemulihan data",
+          "Update keamanan & patch rutin",
+          "Monitoring uptime & performa",
+          "Dukungan teknis responsif",
+        ],
+        benefits: [
+          { title: "Selalu Online", desc: "Monitoring menjaga layanan tetap dapat diakses." },
+          { title: "Aman", desc: "Update & backup rutin melindungi data Anda." },
+          { title: "Tanpa Pusing", desc: "Urusan teknis kami tangani, Anda fokus jualan." },
+        ],
+      },
+      {
+        slug: "konsultasi-digital",
+        title: "Konsultasi Digital",
+        description:
+          "Bingung mulai dari mana? Kami bantu petakan kebutuhan teknologi dan strategi digitalisasi bisnis Anda.",
+        icon: "bolt",
+        color: "bg-indigo-50 text-indigo-600",
+        seoTitle: "Konsultasi Digital & Strategi Teknologi Bisnis",
+        seoDescription:
+          "Konsultasi digital untuk membantu memetakan kebutuhan teknologi dan menyusun strategi transformasi digital bisnis Anda — terarah, realistis, dan sesuai anggaran.",
+        keywords: ["konsultasi digital", "konsultan IT", "strategi transformasi digital"],
+        hero: "Tidak yakin teknologi apa yang Anda butuhkan? Kami bantu memetakan masalah, peluang, dan langkah digitalisasi yang paling tepat untuk bisnis Anda — tanpa over-engineering.",
+        includes: [
+          "Audit kebutuhan & proses bisnis",
+          "Rekomendasi solusi & teknologi",
+          "Perencanaan fitur & prioritas (roadmap)",
+          "Estimasi biaya & timeline realistis",
+          "Strategi digitalisasi bertahap",
+          "Pendampingan eksekusi",
+        ],
+        benefits: [
+          { title: "Arah yang Jelas", desc: "Tahu persis langkah pertama hingga akhir." },
+          { title: "Hemat Anggaran", desc: "Hindari investasi pada fitur yang tak perlu." },
+          { title: "Keputusan Tepat", desc: "Pilihan berbasis kebutuhan nyata, bukan tebakan." },
+        ],
+      },
+    ],
+  },
+  lokaKasir: {
+    eyebrow: "⭐ Produk Unggulan Kreativita",
+    title: "Loka Kasir — Aplikasi Kasir untuk UMKM",
+    description:
+      "Loka Kasir adalah aplikasi Point of Sale (POS) buatan Kreativita yang membantu pemilik usaha mencatat penjualan, mengelola stok, dan memantau laporan keuangan — langsung dari HP atau tablet. Bisa dipakai offline, mudah, dan terjangkau.",
+    features: [
+      "Transaksi cepat dengan dukungan QRIS & cetak struk",
+      "Manajemen produk, stok, dan multi-outlet",
+      "Laporan penjualan & keuangan real-time",
+      "Bekerja offline, sinkron otomatis saat online",
+    ],
+    ctaTry: "Coba Loka Kasir",
+    ctaAsk: "Tanya Tim",
+    online: "● Online",
+    total: "Total",
+    pay: "Bayar",
+    products: ["Kopi", "Roti", "Teh"],
+  },
+  pricing: {
+    eyebrow: "HARGA TERJANGKAU",
+    title: "Paket Sesuai Kebutuhan & Budget",
+    desc: "Harga transparan tanpa biaya tersembunyi. Bisa juga custom sesuai kebutuhan Anda.",
+    popular: "PALING POPULER",
+    note: "💡 Harga di atas estimasi awal — hubungi kami untuk penawaran sesuai kebutuhan spesifik Anda.",
+    plans: [
+      {
+        name: "Starter",
+        subtitle: "Untuk UMKM & personal",
+        price: "Rp 1,5jt",
+        priceNote: "/proyek",
+        popular: false,
+        features: ["Landing page 1 halaman", "Desain responsif (HP & desktop)", "Form kontak & WhatsApp", "Gratis revisi 2x"],
+        cta: "Pilih Starter",
+      },
+      {
+        name: "Business",
+        subtitle: "Website / web app lengkap",
+        price: "Rp 5jt",
+        priceNote: "/proyek",
+        popular: true,
+        features: ["Multi halaman / dashboard admin", "Integrasi database & API", "Panel kelola konten (CMS)", "SEO & optimasi kecepatan", "Gratis maintenance 1 bulan"],
+        cta: "Pilih Business",
+      },
+      {
+        name: "Custom",
+        subtitle: "Aplikasi mobile & sistem besar",
+        price: "Custom",
+        priceNote: "",
+        popular: false,
+        features: ["Aplikasi Android & iOS", "Sistem ERP / POS custom", "Integrasi pembayaran & pihak ke-3", "Dukungan & SLA prioritas"],
+        cta: "Minta Penawaran",
+      },
+    ],
+  },
+  process: {
+    eyebrow: "CARA KERJA",
+    title: "4 Langkah Mudah Mewujudkan Proyek",
+    steps: [
+      { step: "1", title: "Konsultasi", description: "Ceritakan ide & kebutuhan Anda lewat WhatsApp atau email. Gratis!", color: "bg-brand-600" },
+      { step: "2", title: "Penawaran", description: "Kami susun rencana, fitur, timeline, dan harga yang jelas.", color: "bg-indigo-600" },
+      { step: "3", title: "Pengerjaan", description: "Tim kami mulai membangun dengan update progres berkala.", color: "bg-sky-600" },
+      { step: "4", title: "Peluncuran", description: "Aplikasi siap dipakai + dukungan & maintenance setelahnya.", color: "bg-brand-700" },
+    ],
+  },
+  faq: {
+    eyebrow: "FAQ",
+    title: "Pertanyaan yang Sering Ditanyakan",
+    desc: "Belum terjawab? Langsung tanya tim kami lewat WhatsApp atau email.",
+    items: [
+      { q: "Berapa lama waktu pengerjaan sebuah proyek?", a: "Tergantung kompleksitas. Landing page sederhana biasanya 3–7 hari, website/web app dengan dashboard 2–4 minggu, dan aplikasi mobile custom 1–3 bulan. Estimasi pasti kami sampaikan saat penawaran." },
+      { q: "Apakah pembayaran bisa dicicil / bertahap?", a: "Bisa. Umumnya pembayaran dibagi menjadi DP di awal dan pelunasan saat proyek selesai. Untuk proyek besar bisa diatur per termin sesuai progres. Detailnya kita diskusikan saat konsultasi." },
+      { q: "Apakah saya mendapatkan source code-nya?", a: "Ya. Setelah pelunasan, seluruh source code, akun, dan aset proyek menjadi milik Anda sepenuhnya. Tidak ada penguncian — Anda bebas mengembangkannya kapan saja." },
+      { q: "Apakah ada garansi & dukungan setelah selesai?", a: "Ada. Kami memberikan masa garansi untuk perbaikan bug setelah peluncuran, dan menyediakan layanan maintenance bulanan opsional bila Anda ingin website/aplikasi terus dirawat dan diperbarui." },
+      { q: "Saya belum punya konsep yang jelas, apakah tetap bisa?", a: "Tentu. Justru itu tugas kami. Cukup ceritakan masalah atau tujuan bisnis Anda, dan tim kami akan bantu memetakan kebutuhan, fitur, hingga rekomendasi solusi yang paling pas dan hemat biaya." },
+    ],
+  },
+  contact: {
+    title: "Punya Ide? Mari Wujudkan Bersama!",
+    desc: "Hubungi tim Kreativita sekarang. Konsultasi gratis tanpa biaya, balasan cepat melalui WhatsApp atau email.",
+    whatsapp: "Chat via WhatsApp",
+    email: "Kirim Email",
+    waMessage: "Halo Kreativita, saya ingin konsultasi pembuatan aplikasi/website.",
+  },
+  footer: {
+    tagline:
+      "Partner teknologi untuk bisnis Anda — membangun website, aplikasi, dan solusi IT dengan harga terjangkau. Loka Kasir adalah salah satu produk kami.",
+    navTitle: "Navigasi",
+    navLinks: [
+      { href: "/#layanan", label: "Layanan" },
+      { href: "/#produk", label: "Loka Kasir" },
+      { href: "/#harga", label: "Harga" },
+      { href: "/#kontak", label: "Kontak" },
+    ],
+    contactTitle: "Hubungi Kami",
+    whatsapp: "WhatsApp",
+    rights: "Bersinergi membangun inovasi digital.",
+  },
+  servicePage: {
+    backToAll: "← Semua Layanan",
+    breadcrumbHome: "Beranda",
+    breadcrumbServices: "Layanan",
+    whatYouGet: "Apa yang Anda Dapatkan",
+    whyImportant: "Kenapa Penting",
+    ctaConsult: "Konsultasi Gratis",
+    seePricing: "Lihat Harga",
+    readyPrefix: "Siap mulai ",
+    readyDesc: "Ceritakan kebutuhan Anda — konsultasi gratis, tanpa biaya, dan kami bantu petakan solusi terbaiknya.",
+    startNow: "Mulai Sekarang",
+    otherServices: "Layanan Lainnya",
+    waService: (t: string) => `Halo Kreativita Sinergi, saya tertarik dengan layanan ${t}.`,
+  },
+};
+
+export type Dictionary = typeof id;

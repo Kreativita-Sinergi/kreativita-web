@@ -45,7 +45,7 @@ export default async function BlogPaged({ params }: { params: Promise<{ page: st
 
   return (
     <>
-      <Navbar />
+      <Navbar lang="id" />
       <main className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-5 lg:px-8">
           <header className="max-w-2xl mb-10">
@@ -85,7 +85,7 @@ export default async function BlogPaged({ params }: { params: Promise<{ page: st
           <Pagination currentPage={n} totalPages={totalPages} />
         </div>
       </main>
-      <Footer />
+      <Footer lang="id" />
       <FloatingWhatsApp />
     </>
   );

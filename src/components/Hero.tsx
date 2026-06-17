@@ -1,8 +1,10 @@
-import { stats } from "@/data/about";
 import { waLink } from "@/lib/contact";
+import { getDictionary } from "@/i18n";
+import { localizedHref, type Locale } from "@/i18n/config";
 import Reveal from "./Reveal";
 
-export default function Hero() {
+export default function Hero({ lang }: { lang: Locale }) {
+  const t = getDictionary(lang).hero;
   return (
     <section id="home" className="grad-hero relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-grid pointer-events-none" aria-hidden />
@@ -14,19 +16,21 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-600" />
               </span>
-              Siap bantu wujudkan ide digital Anda
+              {t.badge}
             </span>
           </Reveal>
           <Reveal delay={80}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-              Wujudkan <span className="grad-brand">Website &amp; Aplikasi</span> Impian Bisnis Anda
+              {t.titlePre}
+              <span className="grad-brand">{t.titleHighlight}</span>
+              {t.titlePost}
             </h1>
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-6 text-lg text-slate-600 max-w-xl">
-              Kreativita Sinergi adalah partner teknologi yang membantu UMKM hingga perusahaan membangun
-              website, aplikasi mobile, dan semua kebutuhan IT — dengan harga yang{" "}
-              <span className="font-semibold text-slate-800">terjangkau</span> dan kualitas profesional.
+              {t.desc1}
+              <span className="font-semibold text-slate-800">{t.descEmphasis}</span>
+              {t.desc2}
             </p>
           </Reveal>
           <Reveal delay={240}>
@@ -37,7 +41,7 @@ export default function Hero() {
                 rel="noopener"
                 className="group inline-flex items-center gap-2 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 shadow-lg shadow-brand-600/25 transition"
               >
-                Mulai Proyek Anda
+                {t.ctaPrimary}
                 <svg
                   className="w-4 h-4 transition-transform group-hover:translate-x-1"
                   fill="none"
@@ -49,16 +53,16 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="#produk"
+                href={localizedHref(lang, "/#produk")}
                 className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 hover:border-brand-300 text-slate-800 font-semibold px-7 py-3.5 transition"
               >
-                Lihat Loka Kasir
+                {t.ctaSecondary}
               </a>
             </div>
           </Reveal>
           <Reveal delay={320}>
             <div className="mt-10 flex items-center gap-8 text-sm text-slate-500">
-              {stats.map((s, i) => (
+              {t.stats.map((s, i) => (
                 <div key={s.label} className="flex items-center gap-8">
                   {i > 0 && <div className="w-px h-10 bg-slate-200" />}
                   <div>
@@ -73,7 +77,6 @@ export default function Hero() {
 
         <Reveal delay={200} className="relative">
           <div className="animate-float relative mx-auto max-w-md">
-            {/* brand hexagon color glow behind the card */}
             <div className="absolute -inset-6 -z-10 opacity-60 blur-2xl" aria-hidden>
               <div className="absolute left-0 top-4 h-24 w-24 rounded-full bg-brand-500/40" />
               <div className="absolute right-2 top-0 h-20 w-20 rounded-full bg-indigo-400/30" />
@@ -105,8 +108,8 @@ export default function Hero() {
                 </svg>
               </span>
               <div className="text-xs">
-                <div className="font-bold text-slate-900">Launch Sukses</div>
-                <div className="text-slate-500">Tepat waktu</div>
+                <div className="font-bold text-slate-900">{t.launchTitle}</div>
+                <div className="text-slate-500">{t.launchSub}</div>
               </div>
             </div>
           </div>

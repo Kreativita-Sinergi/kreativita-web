@@ -1,23 +1,23 @@
 import type { MetadataRoute } from "next";
 import { siteDetails } from "@/data/siteDetails";
-import { services } from "@/data/services";
+import { getServices } from "@/i18n";
 import { posts, getCategories, totalBlogPages } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteDetails.siteUrl;
   const now = new Date();
+  const services = getServices("id");
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    { url: `${base}/en`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
   ];
 
-  const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
-    url: `${base}/layanan/${s.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
+  const servicePages: MetadataRoute.Sitemap = services.flatMap((s) => [
+    { url: `${base}/layanan/${s.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/en/layanan/${s.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 },
+  ]);
 
   const categoryPages: MetadataRoute.Sitemap = getCategories().map((c) => ({
     url: `${base}/blog/kategori/${c.slug}`,

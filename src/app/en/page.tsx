@@ -4,12 +4,12 @@ import { getDictionary } from "@/i18n";
 import { siteDetails } from "@/data/siteDetails";
 
 export function generateMetadata(): Metadata {
-  const dict = getDictionary("id");
+  const dict = getDictionary("en");
   return {
     title: dict.meta.title,
     description: dict.meta.description,
     alternates: {
-      canonical: "/",
+      canonical: "/en",
       languages: {
         id: "/",
         en: "/en",
@@ -19,12 +19,12 @@ export function generateMetadata(): Metadata {
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
-      url: siteDetails.siteUrl,
-      locale: "id_ID",
+      url: `${siteDetails.siteUrl}/en`,
+      locale: "en_US",
     },
   };
 }
 
-export default function Home() {
-  return <HomePage lang="id" />;
+export default function HomeEn() {
+  return <HomePage lang="en" />;
 }
