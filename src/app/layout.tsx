@@ -73,7 +73,7 @@ const jsonLd = {
       email: siteDetails.contact.email,
       telephone: siteDetails.contact.phoneDisplay,
       areaServed: "ID",
-      sameAs: ["https://lokakasir.id"],
+      sameAs: ["https://www.lokakasir.id"],
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",

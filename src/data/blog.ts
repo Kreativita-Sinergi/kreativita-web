@@ -630,7 +630,7 @@ export const posts: BlogPost[] = [
         text: "Koneksi internet di lapangan tidak selalu stabil. Aplikasi kasir dengan mode offline memastikan Anda tetap bisa berjualan, lalu otomatis menyinkronkan data saat koneksi kembali — tanpa transaksi yang hilang.",
       },
       cta(
-        "Loka Kasir — aplikasi POS buatan Kreativita Sinergi — sudah dilengkapi fitur-fitur ini, termasuk pembayaran QRIS, mode offline & multi-outlet. Butuh sistem kasir khusus? Konsultasikan kebutuhan Anda secara gratis."
+        "[Loka Kasir](https://www.lokakasir.id/) — aplikasi POS buatan Kreativita Sinergi — sudah dilengkapi fitur-fitur ini, termasuk pembayaran QRIS, mode offline & multi-outlet. Coba langsung di lokakasir.id, atau butuh sistem kasir khusus? Konsultasikan kebutuhan Anda secara gratis."
       ),
     ],
     sources: [
@@ -1476,7 +1476,7 @@ export const posts: BlogPost[] = [
         text: "Di bisnis makanan, kecepatan dan akurasi menentukan kepuasan pelanggan. Sistem yang menghubungkan kasir dan dapur mengurangi salah pesan, mempercepat pelayanan, dan memberi Anda data untuk mengatur menu serta stok lebih cerdas.",
       },
       cta(
-        "Loka Kasir buatan Kreativita Sinergi mendukung kebutuhan F&B termasuk KDS & manajemen meja. Butuh sistem khusus restoran Anda? Konsultasi gratis."
+        "[Loka Kasir](https://www.lokakasir.id/) buatan Kreativita Sinergi mendukung kebutuhan F&B termasuk KDS & manajemen meja. Coba langsung di lokakasir.id, atau butuh sistem khusus restoran Anda? Konsultasi gratis."
       ),
     ],
   },
@@ -1732,7 +1732,7 @@ export const posts: BlogPost[] = [
         text: "Dengan data kehadiran yang otomatis dan akurat, tim HR atau pemilik usaha bisa fokus pada hal yang lebih penting. Kesalahan perhitungan berkurang, dan karyawan pun merasa lebih adil.",
       },
       cta(
-        "Loka Kasir dari Kreativita Sinergi sudah punya fitur absensi karyawan. Butuh sistem absensi khusus? Konsultasi gratis untuk kebutuhan Anda."
+        "[Loka Kasir](https://www.lokakasir.id/) dari Kreativita Sinergi sudah punya fitur absensi karyawan. Coba langsung di lokakasir.id, atau butuh sistem absensi khusus? Konsultasi gratis untuk kebutuhan Anda."
       ),
     ],
   },
@@ -2916,7 +2916,7 @@ export const posts: BlogPost[] = [
         text: "Dengan data penjualan dan stok yang akurat, Anda bisa mengatur pembelian, menghindari kehabisan barang laris, dan fokus pada produk yang menguntungkan. POS yang baik mengubah toko Anda jadi lebih cerdas.",
       },
       cta(
-        "Loka Kasir dari Kreativita Sinergi adalah sistem POS modern untuk retail dan F&B, lengkap dengan stok, laporan, dan QRIS. Konsultasi gratis untuk kebutuhan toko Anda."
+        "[Loka Kasir](https://www.lokakasir.id/) dari Kreativita Sinergi adalah sistem POS modern untuk retail dan F&B, lengkap dengan stok, laporan, dan QRIS. Coba langsung di lokakasir.id, atau konsultasi gratis untuk kebutuhan toko Anda."
       ),
     ],
     sources: [

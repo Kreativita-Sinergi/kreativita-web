@@ -28,15 +28,20 @@ export default function LokaKasir() {
           </ul>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href={waLink("Halo Kreativita, saya tertarik dengan Loka Kasir.")}
+              href="https://www.lokakasir.id/"
               target="_blank"
               rel="noopener"
               className="inline-flex items-center gap-2 rounded-full bg-white text-slate-900 font-semibold px-6 py-3 hover:bg-slate-100 transition"
             >
               Coba Loka Kasir
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H8M17 7v9" />
+              </svg>
             </a>
             <a
-              href="#kontak"
+              href={waLink("Halo Kreativita, saya tertarik dengan Loka Kasir.")}
+              target="_blank"
+              rel="noopener"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 text-white font-semibold px-6 py-3 hover:bg-white/10 transition"
             >
               Tanya Tim

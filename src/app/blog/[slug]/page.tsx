@@ -57,12 +57,16 @@ function renderInline(text: string): React.ReactNode[] {
   return tokens.map((tok, i) => {
     const link = tok.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (link) {
+      const href = link[2];
+      // Tautan ke properti sendiri (Loka Kasir / Kreativita Sinergi) dibuat dofollow
+      // agar meneruskan otoritas; sumber eksternal tetap nofollow.
+      const isOwn = /(?:lokakasir\.id|kreativitasinergi\.com)/.test(href);
       return (
         <a
           key={i}
-          href={link[2]}
+          href={href}
           target="_blank"
-          rel="noopener noreferrer nofollow"
+          rel={isOwn ? "noopener" : "noopener noreferrer nofollow"}
           className="text-brand-600 underline underline-offset-2 hover:text-brand-700"
         >
           {link[1]}
