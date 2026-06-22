@@ -88,6 +88,24 @@ async function migrate() {
   `;
 
   await sql`
+    CREATE TABLE IF NOT EXISTS admin_users (
+      id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      email         TEXT NOT NULL UNIQUE,
+      password_hash TEXT NOT NULL,
+      created_at    TIMESTAMPTZ NOT NULL DEFAULT now(),
+      updated_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+    )
+  `;
+
+  await sql`
+    CREATE TABLE IF NOT EXISTS app_settings (
+      key        TEXT PRIMARY KEY,
+      value      TEXT NOT NULL,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+    )
+  `;
+
+  await sql`
     CREATE TABLE IF NOT EXISTS email_logs (
       id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
       client_id   UUID REFERENCES clients(id) ON DELETE SET NULL,

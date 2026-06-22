@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "og": "python3 scripts/gen_og.py"
+    "og": "python3 scripts/gen_og.py",
+    "admin:create": "node scripts/create-admin.mjs"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.5.1",

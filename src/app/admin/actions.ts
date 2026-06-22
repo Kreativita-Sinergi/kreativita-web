@@ -29,7 +29,7 @@ export async function loginAction(_prev: unknown, form: FormData) {
   const email = String(form.get("email") ?? "");
   const password = String(form.get("password") ?? "");
   try {
-    if (!verifyCredentials(email, password)) {
+    if (!(await verifyCredentials(email, password))) {
       return { error: "Email atau password salah." };
     }
     await createSession(email);

@@ -1,26 +1,37 @@
 import "server-only";
 import { cookies } from "next/headers";
 import { SignJWT, jwtVerify } from "jose";
+import {
+  countAdminUsers,
+  getAdminPasswordHash,
+  getOrCreateAuthSecret,
+  upsertAdminUser,
+  verifyPassword,
+} from "./users";
 
 const COOKIE = "kreativita_admin";
 const MAX_AGE = 60 * 60 * 24 * 7; // 7 hari
 
-function secret(): Uint8Array {
-  const s = process.env.AUTH_SECRET;
-  if (!s) throw new Error("AUTH_SECRET belum di-set di environment.");
-  return new TextEncoder().encode(s);
+async function secret(): Promise<Uint8Array> {
+  return new TextEncoder().encode(await getOrCreateAuthSecret());
 }
 
-export function verifyCredentials(email: string, password: string): boolean {
-  const expectedEmail = process.env.ADMIN_EMAIL;
-  const expectedPass = process.env.ADMIN_PASSWORD;
-  if (!expectedEmail || !expectedPass) {
-    throw new Error("ADMIN_EMAIL / ADMIN_PASSWORD belum di-set di environment.");
-  }
-  return (
-    email.trim().toLowerCase() === expectedEmail.trim().toLowerCase() &&
-    password === expectedPass
-  );
+// Bila DB belum punya admin sama sekali, seed satu kali dari env
+// (ADMIN_EMAIL/ADMIN_PASSWORD) jika tersedia — memudahkan setup lokal.
+// Di produksi, admin dibuat lewat `npm run admin:create`.
+async function seedAdminFromEnvIfEmpty(): Promise<void> {
+  const email = process.env.ADMIN_EMAIL;
+  const password = process.env.ADMIN_PASSWORD;
+  if (!email || !password) return;
+  if ((await countAdminUsers()) > 0) return;
+  await upsertAdminUser(email, password);
+}
+
+export async function verifyCredentials(email: string, password: string): Promise<boolean> {
+  await seedAdminFromEnvIfEmpty();
+  const hash = await getAdminPasswordHash(email);
+  if (!hash) return false;
+  return verifyPassword(password, hash);
 }
 
 export async function createSession(email: string): Promise<void> {
@@ -28,7 +39,7 @@ export async function createSession(email: string): Promise<void> {
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
     .setExpirationTime(`${MAX_AGE}s`)
-    .sign(secret());
+    .sign(await secret());
 
   const store = await cookies();
   store.set(COOKIE, token, {
@@ -50,7 +61,7 @@ export async function getSession(): Promise<{ email: string } | null> {
   const token = store.get(COOKIE)?.value;
   if (!token) return null;
   try {
-    const { payload } = await jwtVerify(token, secret());
+    const { payload } = await jwtVerify(token, await secret());
     return { email: String(payload.email) };
   } catch {
     return null;
