@@ -12,7 +12,7 @@ export const en: Dictionary = {
     items: [
       { href: "/#tentang", label: "About" },
       { href: "/#layanan", label: "Services" },
-      { href: "/#produk", label: "Loka Kasir" },
+      { href: "/#produk", label: "Products" },
       { href: "/#harga", label: "Pricing" },
       { href: "/blog", label: "Blog" },
       { href: "/#kontak", label: "Contact" },
@@ -243,6 +243,32 @@ export const en: Dictionary = {
     pay: "Pay",
     products: ["Coffee", "Bread", "Tea"],
   },
+  inventra: {
+    eyebrow: "📦 A Kreativita Product",
+    title: "Inventra — Warehouse & Stock Management",
+    description:
+      "Inventra is a warehouse & stock management app built by Kreativita that helps businesses monitor stock in real time across multiple warehouses, record every stock movement, and get automatic alerts when stock runs low.",
+    features: [
+      "Real-time stock monitoring across multiple warehouses",
+      "Stock transactions: in, out, adjustment & inter-warehouse transfer",
+      "Automatic low-stock alerts via Telegram & web",
+      "Admin & Staff access control per warehouse",
+    ],
+    ctaDemo: "Request a Demo",
+    ctaAsk: "Ask the Team",
+    waMessage: "Hello Kreativita, I'm interested in Inventra (warehouse & stock management) and would like a demo.",
+    panelTitle: "Stock Summary",
+    panelSub: "All warehouses",
+    stats: [
+      { label: "Total Products", value: "128" },
+      { label: "Total Warehouses", value: "3" },
+      { label: "Low Stock", value: "1" },
+    ],
+    lowStockTitle: "Low-Stock Items",
+    lowStockItem: "Rice",
+    lowStockWarehouse: "Main Warehouse",
+    lowStockBadge: "Low Stock",
+  },
   pricing: {
     eyebrow: "AFFORDABLE PRICING",
     title: "Packages to Fit Your Needs & Budget",
@@ -314,7 +340,7 @@ export const en: Dictionary = {
     navTitle: "Navigation",
     navLinks: [
       { href: "/#layanan", label: "Services" },
-      { href: "/#produk", label: "Loka Kasir" },
+      { href: "/#produk", label: "Products" },
       { href: "/#harga", label: "Pricing" },
       { href: "/#kontak", label: "Contact" },
     ],

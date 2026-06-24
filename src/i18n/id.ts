@@ -9,7 +9,7 @@ export const id = {
     items: [
       { href: "/#tentang", label: "Tentang" },
       { href: "/#layanan", label: "Layanan" },
-      { href: "/#produk", label: "Loka Kasir" },
+      { href: "/#produk", label: "Produk" },
       { href: "/#harga", label: "Harga" },
       { href: "/blog", label: "Blog" },
       { href: "/#kontak", label: "Kontak" },
@@ -240,6 +240,32 @@ export const id = {
     pay: "Bayar",
     products: ["Kopi", "Roti", "Teh"],
   },
+  inventra: {
+    eyebrow: "📦 Produk Kreativita",
+    title: "Inventra — Manajemen Gudang & Stok",
+    description:
+      "Inventra adalah aplikasi manajemen gudang & stok buatan Kreativita yang membantu bisnis memantau stok real-time di banyak gudang, mencatat setiap transaksi keluar-masuk barang, dan mendapat peringatan otomatis saat stok mulai menipis.",
+    features: [
+      "Pantau stok real-time di banyak gudang",
+      "Transaksi stok: masuk, keluar, penyesuaian & transfer antar gudang",
+      "Alert stok tipis otomatis via Telegram & web",
+      "Hak akses Admin & Staff per gudang",
+    ],
+    ctaDemo: "Minta Demo",
+    ctaAsk: "Tanya Tim",
+    waMessage: "Halo Kreativita, saya tertarik dengan Inventra (manajemen gudang & stok) dan ingin minta demo.",
+    panelTitle: "Ringkasan Stok",
+    panelSub: "Seluruh gudang",
+    stats: [
+      { label: "Total Produk", value: "128" },
+      { label: "Total Gudang", value: "3" },
+      { label: "Stok Tipis", value: "1" },
+    ],
+    lowStockTitle: "Barang Stok Tipis",
+    lowStockItem: "Beras",
+    lowStockWarehouse: "Gudang Pusat",
+    lowStockBadge: "Stok Tipis",
+  },
   pricing: {
     eyebrow: "HARGA TERJANGKAU",
     title: "Paket Sesuai Kebutuhan & Budget",
@@ -311,7 +337,7 @@ export const id = {
     navTitle: "Navigasi",
     navLinks: [
       { href: "/#layanan", label: "Layanan" },
-      { href: "/#produk", label: "Loka Kasir" },
+      { href: "/#produk", label: "Produk" },
       { href: "/#harga", label: "Harga" },
       { href: "/#kontak", label: "Kontak" },
     ],

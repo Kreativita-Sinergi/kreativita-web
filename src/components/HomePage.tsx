@@ -4,6 +4,7 @@ import TechStack from "@/components/TechStack";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import LokaKasir from "@/components/LokaKasir";
+import Inventra from "@/components/Inventra";
 import Pricing from "@/components/Pricing";
 import Process from "@/components/Process";
 import FAQ from "@/components/FAQ";
@@ -22,6 +23,7 @@ export default function HomePage({ lang }: { lang: Locale }) {
         <About lang={lang} />
         <Services lang={lang} />
         <LokaKasir lang={lang} />
+        <Inventra lang={lang} />
         <Pricing lang={lang} />
         <Process lang={lang} />
         <FAQ lang={lang} />
